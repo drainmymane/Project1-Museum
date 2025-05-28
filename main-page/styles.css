@@ -1,5 +1,13 @@
 *{
-    font-size: 32px;
+    font-size: 22px;
+}
+
+body{
+    margin: 0px;
+}
+
+li{
+    list-style: none;
 }
 
 .container{
@@ -7,17 +15,36 @@
 }
 
 .header-container{
-    display: grid;
-    grid-template-columns: repeat(2,fr);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 150px;
+    background-color: black;
 }
 
 .header-logo{
+    font-size: 28px;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+.header-title{
 
 }
 
 .nav-container{
     display: flex;
     justify-content: flex-end;
+}
+
+.nav-list{
+    display: flex;
+    color:aqua;
+}
+
+.nav-link{
+    margin: 62px 55px;
+    text-decoration: none;
 }
 
 .start-section{
