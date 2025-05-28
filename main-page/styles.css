@@ -1,3 +1,7 @@
+*{
+    font-size: 32px;
+}
+
 .container{
     margin: 0 px;
 }
@@ -34,27 +38,27 @@
     margin: auto;
 }
 
-.welcome{
+#welcome{
 
 }
 
-.visiting{
+#visiting{
     
 }
 
-.explore{
+#explore{
     
 }
 
-.video{
+#video{
     
 }
 
-.gallery{
+#gallery{
     
 }
 
-.tickets{
+#tickets{
     
 }
 
@@ -62,6 +66,6 @@
 
 }
 
-.contacts{
+#contacts{
     
 }
