@@ -28,7 +28,8 @@ h1{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0px 240px;
+    margin: 0px auto;
+    width: 1440px;
     height: 150px;
     background-color: #030303;
 }
@@ -58,6 +59,15 @@ h1{
     margin: 62px 55px;
     text-decoration: none;
     color:#ffffff;
+    transition: 0.5s;
+}
+
+.nav-link:hover{
+    color: #9d8665;
+}
+
+.nav-link:active{
+    color: #7E6C51;
 }
 
 .start-section{
@@ -82,6 +92,7 @@ h1{
 #welcome{
     height: 810px;
     color: #ffffff;
+    box-shadow: 0px 5px 5px grey;
 }
 
 #visiting{
@@ -121,7 +132,8 @@ h1{
     display: grid;
     grid-template-columns: auto 1000px;
     align-items: center;
-    margin: 0 240px;
+    margin: 0 auto;
+    width: 1440px;
 }
 
 .welcome-title{
@@ -147,7 +159,12 @@ h1{
     width: 361px;
     border-radius: 10px;
     background-color: #710707;
+    transition: 0.5s;
     cursor: pointer;
+}
+
+.welcome-title div:hover{
+    background-color: #9d8665;
 }
 
 .monolisa{
@@ -155,6 +172,10 @@ h1{
     flex-direction: column;
     position: relative;
     left:  445px;
+}
+
+.monolisa img{
+    width: 1000px;
 }
 
 .slider{
