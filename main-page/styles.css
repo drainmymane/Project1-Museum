@@ -1,5 +1,7 @@
 *{
     font-size: 22px;
+    font-family: Roboto;
+    font-weight: 100;
 }
 
 body{
@@ -10,22 +12,33 @@ li{
     list-style: none;
 }
 
+h1{
+    letter-spacing: 5px;
+    font-family: Forum;
+    font-size: 80px;
+    font-weight: 100;
+}
+
 .container{
     margin: 0 px;
+    width: 100%;
 }
 
 .header-container{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 0px 240px;
     height: 150px;
-    background-color: black;
+    background-color: #030303;
 }
 
 .header-logo{
+    margin: 20px;
     font-size: 28px;
     text-transform: uppercase;
     color: #ffffff;
+    cursor: pointer;
 }
 
 .header-title{
@@ -62,64 +75,86 @@ li{
 }
 
 .section{
+    position: relative;
     margin: 0px;
 }
 
 #welcome{
-    position: relative;
     height: 810px;
     color: #ffffff;
 }
 
 #visiting{
-    
+    height: 1116px;
 }
 
 #explore{
-    
+    height: 865px;
+
 }
 
 #video{
-    
+    height: 1246px;
+
 }
 
 #gallery{
-    
+    height: 2200px;
+
 }
 
 #tickets{
-    
+    height: 743px;
+
 }
 
 .dividing-line{
+    height: 400px;
 
 }
 
 #contacts{
-    
+    height: 813px;
 }
 
 .welcome-section{
     display: grid;
     grid-template-columns: auto 1000px;
-    margin: auto 240px;
+    align-items: center;
+    margin: 0 240px;
+}
+
+.welcome-title{
+    position: absolute;
+    top: 150px;
+    letter-spacing: 2px;
+    z-index: 100;
+    overflow: visible;
 }
 
 .welcome-title h1{
-    display: block;
-    font-size: 80px;
-    overflow: visible;
+    margin: 0px;
 }
 
 .welcome-title h3{
     font-size: 28px;
+    margin-bottom: 75px;
 }
 
-.monoloisa{
+.welcome-title div{
+    box-sizing: border-box;
+    padding: 26px 64px;
+    width: 361px;
+    border-radius: 10px;
+    background-color: #710707;
+    cursor: pointer;
+}
+
+.monolisa{
     display: flex;
+    flex-direction: column;
     position: relative;
-    background-image: url('/Project1-Museum/images/pictures/monolisa.jpg');
-    border-right: 30px solid aquamarine;
+    left:  445px;
 }
 
 .slider{
@@ -127,14 +162,16 @@ li{
     box-sizing: border-box;
     width: 600px;
     height: 120px;
-    padding: 20px;
+    bottom: 0px;
+    right: 0px;
     color:#ffffff;
-    background-color: #000000;
+    background-color: #030303;
 }
 
 .bg-black{
     position: absolute;
-    background-color: #000000;
+    background-color: #030303;
+    left: 0px;
     height: 100%;
     width: 100%;
     z-index: -100;
