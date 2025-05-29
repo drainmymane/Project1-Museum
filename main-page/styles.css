@@ -1,11 +1,19 @@
 *{
+    box-sizing: border-box;
     font-size: 22px;
     font-family: Roboto;
     font-weight: 100;
+    margin: 0px;
 }
 
-body{
-    margin: 0px;
+.bg-black{
+    position: absolute;
+    background-color: #030303;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    z-index: -100;
 }
 
 li{
@@ -13,14 +21,15 @@ li{
 }
 
 h1{
+    padding-bottom: 25px;
     letter-spacing: 5px;
     font-family: Forum;
     font-size: 80px;
     font-weight: 100;
+    text-transform: uppercase;
 }
 
 .container{
-    margin: 0 px;
     width: 100%;
 }
 
@@ -40,10 +49,6 @@ h1{
     text-transform: uppercase;
     color: #ffffff;
     cursor: pointer;
-}
-
-.header-title{
-
 }
 
 .nav-container{
@@ -70,11 +75,6 @@ h1{
     color: #7E6C51;
 }
 
-.start-section{
-    grid-column-start: 1;
-    grid-column-end: 4;
-}
-
 .main-container{
     display: flex;
     flex-direction: column;
@@ -86,53 +86,20 @@ h1{
 
 .section{
     position: relative;
-    margin: 0px;
+    margin: 0px auto;
 }
 
 #welcome{
     height: 810px;
     color: #ffffff;
+    background-color: #030303;
     box-shadow: 0px 5px 5px grey;
-}
-
-#visiting{
-    height: 1116px;
-}
-
-#explore{
-    height: 865px;
-
-}
-
-#video{
-    height: 1246px;
-
-}
-
-#gallery{
-    height: 2200px;
-
-}
-
-#tickets{
-    height: 743px;
-
-}
-
-.dividing-line{
-    height: 400px;
-
-}
-
-#contacts{
-    height: 813px;
 }
 
 .welcome-section{
     display: grid;
     grid-template-columns: auto 1000px;
     align-items: center;
-    margin: 0 auto;
     width: 1440px;
 }
 
@@ -142,10 +109,6 @@ h1{
     letter-spacing: 2px;
     z-index: 100;
     overflow: visible;
-}
-
-.welcome-title h1{
-    margin: 0px;
 }
 
 .welcome-title h3{
@@ -178,22 +141,62 @@ h1{
     width: 1000px;
 }
 
-.slider{
+.welcome-slider{
     position: absolute;
     box-sizing: border-box;
     width: 600px;
     height: 120px;
     bottom: 0px;
-    right: 0px;
+    right: -10px;
     color:#ffffff;
     background-color: #030303;
 }
 
-.bg-black{
-    position: absolute;
-    background-color: #030303;
-    left: 0px;
-    height: 100%;
-    width: 100%;
-    z-index: -100;
+#visiting{
+    display: grid;
+    grid-template-rows: 200px auto auto;
+    grid-template-areas: 'header header header'
+                        'div div div'
+                        'div div div';
+    height: 1116px;
+    width: 1440px;
+    margin: 75px  auto;
+}
+
+#visiting header{
+    grid-area: header;
+    align-self: flex-end;
+    border-bottom: 3px solid #710707;
+    color: #9d8665;
+}
+
+.visiting
+
+#explore{
+    height: 865px;
+
+}
+
+#video{
+    height: 1246px;
+
+}
+
+#gallery{
+    height: 2200px;
+
+}
+
+#tickets{
+    height: 743px;
+
+}
+
+.dividing-line{
+    height: 400px;
+
+}
+
+#contacts{
+    height: 813px;
 }
