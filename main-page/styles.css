@@ -39,12 +39,12 @@ li{
 
 .nav-list{
     display: flex;
-    color:aqua;
 }
 
 .nav-link{
     margin: 62px 55px;
     text-decoration: none;
+    color:#ffffff;
 }
 
 .start-section{
@@ -62,11 +62,13 @@ li{
 }
 
 .section{
-    margin: auto;
+    margin: 0px;
 }
 
 #welcome{
-
+    position: relative;
+    height: 810px;
+    color: #ffffff;
 }
 
 #visiting{
@@ -95,4 +97,45 @@ li{
 
 #contacts{
     
+}
+
+.welcome-section{
+    display: grid;
+    grid-template-columns: auto 1000px;
+    margin: auto 240px;
+}
+
+.welcome-title h1{
+    display: block;
+    font-size: 80px;
+    overflow: visible;
+}
+
+.welcome-title h3{
+    font-size: 28px;
+}
+
+.monoloisa{
+    display: flex;
+    position: relative;
+    background-image: url('/Project1-Museum/images/pictures/monolisa.jpg');
+    border-right: 30px solid aquamarine;
+}
+
+.slider{
+    position: absolute;
+    box-sizing: border-box;
+    width: 600px;
+    height: 120px;
+    padding: 20px;
+    color:#ffffff;
+    background-color: #000000;
+}
+
+.bg-black{
+    position: absolute;
+    background-color: #000000;
+    height: 100%;
+    width: 100%;
+    z-index: -100;
 }
