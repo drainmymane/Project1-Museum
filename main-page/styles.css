@@ -1,7 +1,18 @@
 *{
+    box-sizing: border-box;
     font-size: 22px;
     font-family: Roboto;
     font-weight: 100;
+}
+
+.bg-black{
+    position: absolute;
+    background-color: #030303;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    z-index: -100;
 }
 
 body{
@@ -17,10 +28,11 @@ h1{
     font-family: Forum;
     font-size: 80px;
     font-weight: 100;
+    text-transform: uppercase;
 }
 
 .container{
-    margin: 0 px;
+    margin: 0px;
     width: 100%;
 }
 
@@ -40,10 +52,6 @@ h1{
     text-transform: uppercase;
     color: #ffffff;
     cursor: pointer;
-}
-
-.header-title{
-
 }
 
 .nav-container{
@@ -70,11 +78,6 @@ h1{
     color: #7E6C51;
 }
 
-.start-section{
-    grid-column-start: 1;
-    grid-column-end: 4;
-}
-
 .main-container{
     display: flex;
     flex-direction: column;
@@ -86,53 +89,20 @@ h1{
 
 .section{
     position: relative;
-    margin: 0px;
+    margin: 0px auto;
 }
 
 #welcome{
     height: 810px;
     color: #ffffff;
-    box-shadow: 0px 5px 5px grey;
-}
-
-#visiting{
-    height: 1116px;
-}
-
-#explore{
-    height: 865px;
-
-}
-
-#video{
-    height: 1246px;
-
-}
-
-#gallery{
-    height: 2200px;
-
-}
-
-#tickets{
-    height: 743px;
-
-}
-
-.dividing-line{
-    height: 400px;
-
-}
-
-#contacts{
-    height: 813px;
+    background-color: #030303;
+    /*box-shadow: 0px 5px 5px grey;*/
 }
 
 .welcome-section{
     display: grid;
     grid-template-columns: auto 1000px;
     align-items: center;
-    margin: 0 auto;
     width: 1440px;
 }
 
@@ -184,16 +154,55 @@ h1{
     width: 600px;
     height: 120px;
     bottom: 0px;
-    right: 0px;
+    right: -10px;
     color:#ffffff;
     background-color: #030303;
 }
 
-.bg-black{
-    position: absolute;
-    background-color: #030303;
-    left: 0px;
-    height: 100%;
-    width: 100%;
-    z-index: -100;
+#visiting{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-areas: 'header header header'
+                        'div div div'
+                        'div div div';
+    height: 1116px;
+    width: 1440px;
+}
+
+#visiting header{
+    grid-area: header;
+    align-self: flex-end;
+    border-bottom: 3px solid #710707;
+    padding-bottom: 25px;
+}
+
+.visiting
+
+#explore{
+    height: 865px;
+
+}
+
+#video{
+    height: 1246px;
+
+}
+
+#gallery{
+    height: 2200px;
+
+}
+
+#tickets{
+    height: 743px;
+
+}
+
+.dividing-line{
+    height: 400px;
+
+}
+
+#contacts{
+    height: 813px;
 }
