@@ -1,3 +1,7 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Forum&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Forum&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 *{
     box-sizing: border-box;
     font-size: 22px;
@@ -50,15 +54,32 @@ h3{
     margin: 0px auto;
     width: 1440px;
     height: 150px;
+    font-weight: 100;
     background-color: #030303;
 }
 
 .header-logo{
-    margin: 20px;
+    display: flex;
+    align-items: baseline;
+    padding: 0px;
+    margin: 0px;
+    height: 33px;
     font-size: 28px;
+    font-weight: 400;
     text-transform: uppercase;
+    font-family: Forum;
+    letter-spacing: 5px;
     color: #ffffff;
     cursor: pointer;
+}
+
+.louvre-logo{
+    margin-right: 25px;
+    width: 49px;
+    height: 26px;
+    background-image: url(/Project1-Museum/images/icons/luvr_triangle.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .nav-container{
@@ -71,8 +92,10 @@ h3{
 }
 
 .nav-link{
-    margin: 62px 55px;
+    margin: 62px 21px 62px 34px;
     text-decoration: none;
+    letter-spacing: 2px;
+    font-size: 22px;
     color:#ffffff;
     transition: 0.5s;
 }
@@ -100,6 +123,7 @@ h3{
 }
 
 #welcome{
+    position: relative;
     height: 810px;
     color: #ffffff;
     background-color: #030303;
@@ -107,18 +131,20 @@ h3{
 }
 
 .welcome-section{
-    display: grid;
-    grid-template-columns: auto 1000px;
-    align-items: center;
+    display: flex;
+    flex-direction: row-reverse;
     width: 1440px;
 }
 
 .welcome-title{
     position: absolute;
-    top: 150px;
+    align-self: center;
+    left: 0px;
     letter-spacing: 2px;
     z-index: 100;
     overflow: visible;
+    white-space: nowrap;
+    z-index: 100;
 }
 
 .welcome-title h3{
@@ -142,17 +168,23 @@ h3{
 
 .monolisa{
     position: relative;
-    left:  445px;
+    width: 100%;
+    height: 750px;
+    background-image: url(/Project1-Museum/images/pictures/monolisa.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: calc(100% - 20px) calc(100% - 10px);
 }
 
-/*.monolisa::before{
+.monolisa div::after{
     content: '';
     position: absolute;
     height: 100%;
     width: 100%;
-    background: linear-gradient(to right, #000000 1000%, #000000 50%, #000000 0%);
-    z-index: 1000;
-}*/
+    left: 410px;
+    background: linear-gradient(90deg,rgba(3, 3, 3, 1) 0%, rgba(3, 3, 3, 0.5) 16%, rgba(3, 3, 3, 0) 31%);
+    z-index: 10;
+}
 
 .welcome-slider{
     position: absolute;
@@ -160,9 +192,9 @@ h3{
     width: 600px;
     height: 120px;
     bottom: 0px;
-    right: -10px;
     color:#ffffff;
     background-color: #030303;
+    z-index: 100;
 }
 
 #visiting{
@@ -236,7 +268,7 @@ h3{
 
 #gallery{
     height: 2200px;
-
+    background-color: #030303;
 }
 
 #tickets{
