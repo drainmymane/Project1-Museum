@@ -1,3 +1,7 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Forum&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Forum&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 *{
     box-sizing: border-box;
     font-size: 22px;
@@ -6,7 +10,11 @@
     margin: 0px;
 }
 
-.bg-black{
+html {
+  scroll-behavior: smooth;
+}
+
+/*.bg-black{
     position: absolute;
     background-color: #030303;
     left: 0px;
@@ -14,7 +22,7 @@
     height: 100%;
     width: 100%;
     z-index: -100;
-}
+}*/
 
 li{
     list-style: none;
@@ -25,7 +33,13 @@ h1{
     letter-spacing: 5px;
     font-family: Forum;
     font-size: 80px;
-    font-weight: 100;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+h3{
+    font-size: 32px;
+    letter-spacing: 5px;
     text-transform: uppercase;
 }
 
@@ -40,15 +54,32 @@ h1{
     margin: 0px auto;
     width: 1440px;
     height: 150px;
+    font-weight: 100;
     background-color: #030303;
 }
 
 .header-logo{
-    margin: 20px;
+    display: flex;
+    align-items: baseline;
+    padding: 0px;
+    margin: 0px;
+    height: 33px;
     font-size: 28px;
+    font-weight: 400;
     text-transform: uppercase;
+    font-family: Forum;
+    letter-spacing: 5px;
     color: #ffffff;
     cursor: pointer;
+}
+
+.louvre-logo{
+    margin-right: 25px;
+    width: 49px;
+    height: 26px;
+    background-image: url(/Project1-Museum/images/icons/luvr_triangle.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .nav-container{
@@ -61,8 +92,10 @@ h1{
 }
 
 .nav-link{
-    margin: 62px 55px;
+    margin: 62px 21px 62px 34px;
     text-decoration: none;
+    letter-spacing: 2px;
+    font-size: 22px;
     color:#ffffff;
     transition: 0.5s;
 }
@@ -90,6 +123,7 @@ h1{
 }
 
 #welcome{
+    position: relative;
     height: 810px;
     color: #ffffff;
     background-color: #030303;
@@ -97,23 +131,25 @@ h1{
 }
 
 .welcome-section{
-    display: grid;
-    grid-template-columns: auto 1000px;
-    align-items: center;
+    display: flex;
+    flex-direction: row-reverse;
     width: 1440px;
 }
 
 .welcome-title{
     position: absolute;
-    top: 150px;
+    align-self: center;
+    left: 0px;
     letter-spacing: 2px;
     z-index: 100;
     overflow: visible;
+    white-space: nowrap;
+    z-index: 100;
 }
 
 .welcome-title h3{
-    font-size: 28px;
     margin-bottom: 75px;
+    font-size: 28px;
 }
 
 .welcome-title div{
@@ -131,14 +167,23 @@ h1{
 }
 
 .monolisa{
-    display: flex;
-    flex-direction: column;
     position: relative;
-    left:  445px;
+    width: 100%;
+    height: 750px;
+    background-image: url(/Project1-Museum/images/pictures/monolisa.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: calc(100% - 20px) calc(100% - 10px);
 }
 
-.monolisa img{
-    width: 1000px;
+.monolisa div::after{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 410px;
+    background: linear-gradient(90deg,rgba(3, 3, 3, 1) 0%, rgba(3, 3, 3, 0.5) 16%, rgba(3, 3, 3, 0) 31%);
+    z-index: 10;
 }
 
 .welcome-slider{
@@ -147,20 +192,21 @@ h1{
     width: 600px;
     height: 120px;
     bottom: 0px;
-    right: -10px;
     color:#ffffff;
     background-color: #030303;
+    z-index: 100;
 }
 
 #visiting{
     display: grid;
     grid-template-rows: 200px auto auto;
+    gap: 75px 60px;
     grid-template-areas: 'header header header'
                         'div div div'
                         'div div div';
     height: 1116px;
     width: 1440px;
-    margin: 75px  auto;
+    margin-bottom: 75px;
 }
 
 #visiting header{
@@ -170,11 +216,49 @@ h1{
     color: #9d8665;
 }
 
-.visiting
+.visiting-tour-block{
+    display: flex;
+    flex-direction: column;
+}
+
+.tour-block-header{
+    position: relative;
+    padding: 25px 0px 10px;
+    font-family: Forum;
+    font-weight: 400;
+}
+
+.tour-block-header::after{
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    width: 70%;
+    height: 3px;
+    background-color: #710707;
+}
+
+.tour-block-title1{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 22px;
+    font-weight: 100;
+}
+
+.tour-block-title2{
+    font-size: 18px;
+    font-weight: 100;
+}
 
 #explore{
     height: 865px;
+    margin: 75px 0px;
+    background-color: #030303;
+}
 
+.explore-section{
+    display:flex;
 }
 
 #video{
@@ -184,7 +268,7 @@ h1{
 
 #gallery{
     height: 2200px;
-
+    background-color: #030303;
 }
 
 #tickets{
