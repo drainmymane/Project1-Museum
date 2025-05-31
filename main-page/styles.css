@@ -67,7 +67,6 @@ p{
 .header-logo{
     display: flex;
     align-items: baseline;
-    padding: 0px;
     margin: 0px;
     height: 33px;
     font-size: 28px;
@@ -186,7 +185,7 @@ p{
     content: '';
     position: absolute;
     height: 100%;
-    width: 100%;
+    width: 500px;
     left: 410px;
     background: linear-gradient(90deg,rgba(3, 3, 3, 1) 0%, rgba(3, 3, 3, 0.5) 16%, rgba(3, 3, 3, 0) 31%);
     z-index: 10;
@@ -302,8 +301,8 @@ p{
 .video-grid-container {  
     display: grid;
     position: relative;
-    gap: 30px 60px;
-    grid-template-columns: auto;
+    gap: 30px auto;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: 650px 254px 15px;
     grid-template-areas:
     "big-video big-video big-video"
@@ -329,7 +328,6 @@ p{
 
 .big-video { 
     grid-area: big-video;
-    width: 1475px;
 }
 
 .small-video{ 
@@ -343,6 +341,7 @@ p{
 
 
 #gallery{
+    position: relative;
     height: 2200px;
     background-color: #030303;
 }
@@ -359,4 +358,10 @@ p{
 
 #contacts{
     height: 813px;
+}
+
+@media (max-width: 1920px) {
+    .html{
+        width: 1920px;
+    }
 }
