@@ -320,6 +320,7 @@ p{
 .video-text{
     grid-area: video-text; 
     align-self: center;
+    padding-bottom: 25px;
     left: 0px;
     font-weight: 300;
     color: black;
