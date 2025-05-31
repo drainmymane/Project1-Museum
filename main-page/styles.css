@@ -37,6 +37,11 @@ h1{
     text-transform: uppercase;
 }
 
+section.section h1{
+    color: #9D8665;
+    border-bottom: 3px solid #710707;
+}
+
 h3{
     font-size: 32px;
     letter-spacing: 5px;
@@ -120,6 +125,11 @@ p{
 
 .footer-container{
     display: grid;
+    grid-template-columns: 1fr 1fr 1fr 3fr;
+    grid-template-areas: 'louvre nav1 nav2 socials'
+                        'flex-footer';
+    height: 392px;
+    background-color: #030303;
 }
 
 .section{
@@ -213,11 +223,9 @@ p{
     margin-bottom: 150px;
 }
 
-#visiting header{
+#visiting h1{
     grid-area: header;
     align-self: flex-end;
-    border-bottom: 3px solid #710707;
-    color: #9d8665;
 }
 
 .visiting-tour-block{
@@ -280,7 +288,6 @@ p{
 
 .explore-head{
     margin-bottom: 75px;
-    border-bottom: 3px solid #710707;
     white-space: nowrap;
 }
 
@@ -294,7 +301,10 @@ p{
 
 #video{
     height: 1246px;
+}
 
+section#video.section h1{
+    border: none;
 }
 
 .video-grid-container {  
@@ -313,9 +323,7 @@ p{
     display: flex;
     justify-content: space-between;
     margin-bottom: 50px;
-    color: #9d8665;
 }
-
 
 .video-text{
     grid-area: video-text; 
@@ -384,15 +392,69 @@ p{
 }
 
 #tickets{
+    position: relative;
     height: 743px;
+}
+
+#tickets h2{
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.tickets-grid-container{
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-areas: 'header header header'
+                        'div div div';
+    gap: 75px 60px;
+    margin: 75px;
+}
+
+.tickets-head{
+    grid-area: header;
 
 }
 
-.dividing-line{
-    height: 400px;
+.tickets-type{
+    height: 100%;
+}
 
+.tickets-amount{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.dividing-line{
+    width: 100%;
+    height: 400px;
+    margin: 0px auto;
+    background-image: url(/Project1-Museum/images/pictures/dividing-line-parallax.jpg);
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 #contacts{
     height: 813px;
+    margin: 75px auto;
+}
+
+.contacts-grid-container{
+    display: grid;
+    grid-template-areas: 'header header'
+                        'div div';
+    row-gap: 75px;
+    justify-content: space-between;
+}
+
+.contacts-head{
+    grid-area: header;
+}
+
+.contacts-info{
+    font-size: 28px;
+}
+
+.contacts-info h2{
+    font-weight: 500;
 }
