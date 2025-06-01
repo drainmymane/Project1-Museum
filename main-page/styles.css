@@ -100,6 +100,10 @@ p{
     display: flex;
 }
 
+.footer-container .nav-list{
+    flex-direction: column;
+}
+
 .nav-link{
     margin: 62px 21px 62px 34px;
     text-decoration: none;
@@ -123,18 +127,109 @@ p{
 }
 
 .footer-container{
+    position: relative;
+    color: #ffffff;
+    background-color: #030303;
+}
+
+.footer-container div.section{
+    position: relative;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 3fr;
-    grid-template-areas: 'louvre nav1 nav2 socials'
-                        'flex-footer';
-    height: 392px;
+    grid-template-rows: 235px 124px;
+    grid-template-areas: 'louvre nav nav socials';
+    row-gap: 30px;
+    text-transform: uppercase;
+    color: #ffffff;
     background-color: #030303;
+}
+
+.footer-louvre{
+    grid-area: 'louvre';
+    align-self: center;
+}
+
+.nav1,.nav2{
+    grid-area: 'nav';
+}
+
+.nav1 *,.nav2 *{
+    margin-top: 25px;
+    font-size: 22px;
+    font-weight: 100;
+    justify-content: end;
+}
+
+.socials-list{
+    grid-area: 'socials';
+    display: flex;
+    justify-content: end;
+    align-items: end;
+}
+
+a.socials-link{
+    margin-left: 25px;
+    height: 48px;
+    width: 48px;
+    cursor: pointer;
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+    background-size: 16px;
+    background-position: 16px;
+    background-repeat: no-repeat;
+}
+
+a.socials-link:nth-child(1){
+    background-image: url(/Project1-Museum/images/icons/youtube.svg);
+}
+
+a.socials-link:nth-child(2){
+    background-image: url(/Project1-Museum/images/icons/instagram.svg);
+}
+
+a.socials-link:nth-child(3){
+    background-image: url(/Project1-Museum/images/icons/facebook.svg);
+}
+
+a.socials-link:nth-child(4){
+    background-image: url(/Project1-Museum/images/icons/twitter.svg);
+    background-position: 55%;
+}
+
+a.socials-link:nth-child(5){
+    background-image: url(/Project1-Museum/images/icons/pinterest.svg);
+}
+
+.footer-container::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: 120px;
+    left: 0px;
+    background-color: #666666;
+}
+
+.flex-footer{
+    grid-area: 'flex-footer';
+    grid-column: span 4;
+    align-self: center;
+    display: flex;
+    justify-content: space-between;
 }
 
 .section{
     position: relative;
     margin: 0px auto;
     width: 1440px;
+}
+
+#welcome::after,#explore::after,#gallery::after{
+    position: absolute;
+    left: 0;
+    background-color: #030303;
+    height: 100%;
+    width: 2000px;
 }
 
 #welcome{
@@ -288,6 +383,7 @@ p{
 .explore-head{
     margin-bottom: 75px;
     white-space: nowrap;
+    border-bottom: 3px solid #710707;
 }
 
 .explore-about{
@@ -356,7 +452,7 @@ section#video.section h1{
     background-color: #030303;
 }
 
-#gallery::after{
+#gallery::before{
     content: "";
     position: absolute;
     bottom: 0px;
@@ -368,8 +464,8 @@ section#video.section h1{
     z-index: 10;
 }
 
-
 .gallery-flex-container{
+    position: relative;
     display: flex;
     margin-top: 75px;
     column-gap: 36px;
@@ -555,6 +651,7 @@ section#video.section h1{
 }
 
 .dividing-line{
+    margin: 0px;
     width: 100%;
     height: 400px;
     background-image: url(/Project1-Museum/images/pictures/dividing-line-parallax.jpg);
