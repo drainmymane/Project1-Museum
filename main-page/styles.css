@@ -230,7 +230,7 @@ a.socials-link:nth-child(5){
 
 #welcome{
     position: relative;
-    height: 810px;
+    
     color: #ffffff;
     background-color: #030303;
     box-shadow: 0px 5px 5px grey;
@@ -354,7 +354,6 @@ a.socials-link:nth-child(5){
 
 #explore{
     position: relative;
-    align-items: center;
     height: 865px;
     margin: 75px 0px;
     color: #ffffff;
@@ -444,7 +443,6 @@ section#video.section h1{
     position: relative;
     overflow-y: hidden;
     height: 2200px;
-    padding: 75px;
     color: #ffffff;
     background-color: #030303;
 }
@@ -645,6 +643,11 @@ section#video.section h1{
     color: white;
     background-color: #000000;
     cursor: pointer;
+    transition: 0.5s;
+}
+
+.buy-now:hover{
+    background-color: #9d8665;
 }
 
 .dividing-line{
