@@ -224,13 +224,13 @@ a.socials-link:nth-child(5){
     width: 1440px;
 }
 
-#welcome,#explore,#gallery{
+#welcome,#explore,#gallery,.dividing-line{
     min-width: 1440px;
 }
 
 #welcome{
     position: relative;
-    
+
     color: #ffffff;
     background-color: #030303;
     box-shadow: 0px 5px 5px grey;
@@ -239,6 +239,7 @@ a.socials-link:nth-child(5){
 .welcome-section{
     display: flex;
     flex-direction: row-reverse;
+    height: 810px;
 }
 
 .welcome-title{
@@ -246,7 +247,6 @@ a.socials-link:nth-child(5){
     align-self: center;
     left: 0px;
     letter-spacing: 2px;
-    z-index: 100;
     overflow: visible;
     white-space: nowrap;
     z-index: 100;
@@ -457,6 +457,10 @@ section#video.section h1{
     height: 50%;
     background: linear-gradient(0deg,rgba(3, 3, 3, 1) 0%, rgba(3, 3, 3, 0.5) 16%, rgba(3, 3, 3, 0) 31%);
     z-index: 10;
+}
+
+.gallery-head{
+    margin-top: 75px;
 }
 
 .gallery-flex-container{
