@@ -3,7 +3,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Forum&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 *{
-    box-sizing: border-box;
     font-size: 22px;
     font-family: Roboto;
     font-weight: 100;
@@ -394,11 +393,14 @@ section#video.section h1{
 #tickets{
     position: relative;
     height: 743px;
+    margin: 75px auto;
+    --big-bold-font-size: 28px;
+    --big-bold-font-weight: 700;
 }
 
 #tickets h2{
-    font-size: 28px;
-    font-weight: 700;
+    font-size: var(--big-bold-font-size);
+    font-weight: var(--big-bold-font-weight);
 }
 
 .tickets-grid-container{
@@ -407,7 +409,6 @@ section#video.section h1{
     grid-template-areas: 'header header header'
                         'div div div';
     gap: 75px 60px;
-    margin: 75px;
 }
 
 .tickets-head{
@@ -416,8 +417,82 @@ section#video.section h1{
 }
 
 .tickets-type{
+    position: relative;
     height: 100%;
 }
+
+.tickets-type h2{
+    margin-bottom: 50px;
+}
+/* настройка радиокнопок, текстура, и как ведут себя кнопки при наводке и выборе*/
+.tickets-radio {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 25px;
+  cursor: pointer;
+  font-size: 22px;
+  font-weight: 300;
+  user-select: none;
+}
+
+
+.tickets-radio input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 17px;
+  width: 17px;
+  background-color: #ffffff;
+  border: 2px solid #000000;
+  border-radius: 50%;
+}
+
+.tickets-radio:hover input ~ .checkmark {
+  background-color: #ffffff;
+}
+
+.tickets-radio input:checked ~ .checkmark {
+  background-color: #ffffff;
+}
+
+.tickets-radio input:checked ~ .checkmark::after {
+  background-color: #000000;
+}
+
+.checkmark::after {
+  content: "";
+  position: absolute;
+  background-color: #000000;
+}
+
+.tickets-radio input:checked ~ .checkmark::after {
+  display: block;
+}
+
+.tickets-radio .checkmark::after {
+ 	top: 5px;
+	left: 5px;
+	width: 7px;
+	height: 7px;
+	border-radius: 50%;
+	background: #ffffff;
+}
+
+.tickets-radio .checkmark::after {
+  background-color: #ffffff;
+}
+
+.tickets-radio:hover .checkmark::after {
+  background-color: #000000;
+}
+/*--------------------------*/
 
 .tickets-amount{
     display: flex;
@@ -425,10 +500,63 @@ section#video.section h1{
     align-items: flex-end;
 }
 
+.tickets-amount h2{
+    margin-bottom: 25px;
+}
+
+.tickets-amount div,p{
+    margin-bottom: 5px;
+    font-size: 22px;
+    font-weight: 300;
+}
+
+.tickets-amount form{
+    display: flex;
+    justify-content: space-between;
+    width: 100px;
+    padding: 6px 14px;
+    border: 3px solid #000000;
+}
+
+.tickets-amount form button{
+    border: none;
+    background-color: #ffffff;
+    cursor: pointer;
+}
+
+
+.number {
+    all: unset;
+    margin-left: 10px;
+    text-align: center;
+}
+
+#total-euro{
+    margin-top: 50px;
+}
+
+#total-euro *{
+    font-size: var(--big-bold-font-size);
+    font-weight: var(--big-bold-font-weight);
+}
+
+.buy-now{
+    margin: 52px 0px;
+    padding: 15px 36px;
+    width: 175px;
+    border: none;
+    border-radius: 3px;
+    text-align: center;
+    text-decoration: none;
+    letter-spacing: 2px;
+    color: white;
+    background-color: #000000;
+    cursor: pointer;
+}
+
 .dividing-line{
     width: 100%;
     height: 400px;
-    margin: 0px auto;
     background-image: url(/Project1-Museum/images/pictures/dividing-line-parallax.jpg);
     background-size: cover;
     background-attachment: fixed;
@@ -451,10 +579,12 @@ section#video.section h1{
     grid-area: header;
 }
 
-.contacts-info{
+.contacts-info *{
     font-size: 28px;
+    font-weight: 300;
 }
 
 .contacts-info h2{
     font-weight: 500;
+    margin-bottom: 50px;
 }
