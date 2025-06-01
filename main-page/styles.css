@@ -204,6 +204,7 @@ a.socials-link:nth-child(5){
     content: '';
     position: absolute;
     width: 100%;
+    min-width: 1440px;
     height: 3px;
     bottom: 120px;
     left: 0px;
