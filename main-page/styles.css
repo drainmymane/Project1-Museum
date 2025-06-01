@@ -224,12 +224,8 @@ a.socials-link:nth-child(5){
     width: 1440px;
 }
 
-#welcome::after,#explore::after,#gallery::after{
-    position: absolute;
-    left: 0;
-    background-color: #030303;
-    height: 100%;
-    width: 2000px;
+#welcome,#explore,#gallery{
+    min-width: 1440px;
 }
 
 #welcome{
@@ -357,6 +353,7 @@ a.socials-link:nth-child(5){
 }
 
 #explore{
+    position: relative;
     align-items: center;
     height: 865px;
     margin: 75px 0px;
@@ -383,7 +380,7 @@ a.socials-link:nth-child(5){
 .explore-head{
     margin-bottom: 75px;
     white-space: nowrap;
-    border-bottom: 3px solid #710707;
+    border-bottom: 3px solid#710707;
 }
 
 .explore-about{
