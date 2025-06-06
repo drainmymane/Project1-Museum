@@ -7,6 +7,7 @@
     font-family: Roboto;
     font-weight: 100;
     margin: 0px;
+    padding: 0;
 }
 
 html {
@@ -121,6 +122,23 @@ p{
     color: #7E6C51;
 }
 
+.list-toggle{
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-right: 20px;
+    padding: 5px;
+    width: 32px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.list-toggle div{
+    background-color: #ffffff;
+    width: 100%;
+    height: 2px;
+}
+
 .main-container{
     display: flex;
     flex-direction: column;
@@ -204,7 +222,6 @@ a.socials-link:nth-child(5){
     content: '';
     position: absolute;
     width: 100%;
-    min-width: 1440px;
     height: 3px;
     bottom: 120px;
     left: 0px;
@@ -304,19 +321,22 @@ a.socials-link:nth-child(5){
 }
 
 #visiting{
-    display: grid;
-    grid-template-rows: 200px auto auto;
-    gap: 75px 60px;
-    grid-template-areas: 'header header header'
-                        'div div div'
-                        'div div div';
     height: 1116px;
-    margin-bottom: 150px;
+    margin-bottom: 75px;
+}
+
+.visiting-container{
+    display: grid;
+    grid-template-rows: auto auto;
+    gap: 75px 60px;
+    grid-template-areas:'div div div'
+                        'div div div';
+    
 }
 
 #visiting h1{
-    grid-area: header;
     align-self: flex-end;
+    margin: 75px auto;
 }
 
 .visiting-tour-block{
@@ -402,13 +422,13 @@ section#video.section h1{
 .video-grid-container {  
     display: grid;
     position: relative;
-    gap: 30px auto;
-    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 650px 254px 15px;
     grid-template-areas:
     "big-video big-video big-video"
     "small-video small-video small-video"
-    "video-slider video-slider video-slider";
+    ". video-slider .";
 }
 
 .video-head { 
@@ -435,8 +455,7 @@ section#video.section h1{
 }
 
 .video-slider { 
-    grid-area: video-slider; 
-    margin: auto;
+    grid-area: video-slider;
 }
 
 
@@ -469,6 +488,11 @@ section#video.section h1{
     display: flex;
     margin-top: 75px;
     column-gap: 36px;
+}
+
+.gallery-flex-container div{
+    max-width: 456px;
+    flex-shrink: 1;
 }
 
 .gallery-side-flex{
@@ -610,12 +634,17 @@ section#video.section h1{
     display: flex;
     justify-content: space-between;
     width: 100px;
-    padding: 6px 14px;
+    height: 50px;
+    padding: 0px 14px;
     border: 3px solid #000000;
+    font-size: 22px;
+    font-weight: 300;
 }
 
 .tickets-amount form button{
     border: none;
+    font-size: 32px;
+    font-weight: 400;
     background-color: #ffffff;
     cursor: pointer;
 }
@@ -689,4 +718,289 @@ section#video.section h1{
 .contacts-info h2{
     font-weight: 500;
     margin-bottom: 50px;
+}
+
+.lovre-location-image{
+    background-image: url(/Project1-Museum/images/pictures/map.jpg);
+    height: 620px;
+    width: 960px;
+}
+
+@media (max-width: 1024px) {
+    h1{
+        font-size: 50px;
+        font-weight: 400;
+        line-height: 90px;
+
+    }
+
+    .section{
+        width: 1024px;
+        margin-left: 20px;
+    }
+
+    #welcome,#explore,#gallery,.dividing-line{
+        min-width: 1024px;
+    }
+
+    #welcome{
+        box-shadow: none;
+    }
+
+    .header-logo{
+        margin-left: 20px;
+    }
+    
+    .header-container{
+        width: 1024px;
+    }
+
+    .welcome-section{
+        display: flex;
+        flex-direction: row-reverse;
+        height: 585px;
+    }
+
+    .welcome-title{
+        top: 50px;
+    }
+
+    .welcome-title h3{
+        margin-bottom: 50px;
+        font-size: 24px;
+        text-transform: none;
+    }
+
+    .welcome-title div{
+        width: 300px;
+        height: 60px;
+        padding: 20px 45px;
+        font-size: 20px;
+    }
+
+    .monolisa{
+        width: 100%;
+        height: 525px;
+    }
+
+    .monolisa::after{
+        height: 100%;
+        width: 500px;
+        left: 304px;
+    }
+
+    .list-toggle{
+        display:flex;
+    }
+
+    .header-container .nav-container{
+        display: none; 
+    }
+
+    .welcome-slider{
+        bottom: 1px;  
+    }
+
+    #visiting{
+        display: block;
+        height: 1313px;
+        width: 1024px;
+        padding-top: 60px;
+    }
+
+    #visiting h1{
+        font-size: 50px;
+        margin: 20px;
+    }
+
+    .tour-block-header{
+        font-size: 28px;
+        letter-spacing: 3px;
+    }
+
+    .visiting-container{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 60px 108px;
+        padding: 60px 108px;
+    }
+
+    #visiting div.visiting-tour-block{
+        height: 345px;
+        width: 330px;
+    }
+
+    #explore{
+        height: 1149px;
+    }
+
+    .explore-section{
+        flex-direction: column;
+        height: 1149px;
+    }
+
+    .explore-text{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 0px;
+        margin-right: 0px;
+        margin-left: 20px;
+        font-size: 20px;
+        line-height: 35px;
+    }
+
+    .explore-about:nth-child(4){
+        display: none;
+    }
+
+    .explore-head{
+        margin-top: -20px;
+    }
+
+    .explore-slider{
+        align-self: center;
+    }
+
+    #video{
+        height: 881px;
+    }
+
+    .video-head{
+        margin-top: -20px;
+        margin-bottom: 0px;
+    }
+
+    .video-text{
+        display: none;
+    }
+    
+    .video-grid-container {
+        grid-template-rows: auto auto 15px;
+        grid-template-columns: 300px 300px 300px;
+    }
+
+    .big-video{
+        width: 984px;
+    }
+
+    .small-video{
+        width: 300px;
+    }
+
+    .video-slider { 
+        align-content: center;
+    }
+
+    #gallery{
+        width: 1024px;
+        height: 1460px;
+    }
+
+    .gallery-flex-container div{
+        max-width: 304px;
+    }
+
+    #tickets,#contacts{
+        margin-left: 20px;
+        height: auto;
+    }
+
+    .dividing-line{
+        margin: 0;
+    }
+
+    .tickets-type{
+        display: none;
+    }
+
+    .tickets-amount{
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+    .tickets-amount form{
+        width: 141px;
+    }
+
+    .buy-now{
+        margin-bottom: 0px;
+    }
+
+    .number{
+        margin-left: 0px;
+    }
+    
+    #total-euro{
+        margin-top: 0px;
+    }
+    
+    #total-euro span{
+        margin-right: 13px;
+    }
+
+    .dividing-line{
+        background-image: url(/Project1-Museum/images/pictures/dividing-line-parallax1024.jpg);
+        background-attachment: local;
+    }
+
+    .lovre-location-image{
+        height: 454px;
+        width: 694px;
+    }
+
+    .contacts-info *{
+        font-size: 20px;
+    }
+
+    footer div.section{
+        margin-left: 0px;
+    }
+
+    .contacts-grid-container{
+        row-gap: 60px;
+        column-gap: 35px;
+        justify-content:start;
+    }
+
+    .footer-container::after{
+        width: 1024px;
+    }
+}
+
+@media (max-width: 768px) {
+    .welcome-section{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .welcome-title{
+        position: relative;
+        justify-items: center;
+    }
+
+    .welcome-title h1{
+        font-size: 40px;
+        font-weight: 400;
+        line-height: 40px;
+    }
+
+    .welcome-title h3{
+        margin-bottom: 50px;
+        font-size: 20px;
+        font-weight: 300;
+        text-transform: none;
+    }
+
+    .welcome-title div{
+        display: none;  /* <!--deletes button --> */
+    }
+
+    .monolisa{
+        position: relative;
+        background-position:center;
+    }
+
+    .monolisa::after{
+        display: none;
+    }
 }
