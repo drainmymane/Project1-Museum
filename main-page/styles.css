@@ -163,7 +163,7 @@ p{
 }
 
 .footer-louvre{
-    grid-area: 'louvre';
+    grid-area: louvre;
     align-self: center;
 }
 
@@ -179,7 +179,7 @@ p{
 }
 
 .socials-list{
-    grid-area: 'socials';
+    grid-area: socials;
     display: flex;
     justify-content: end;
     align-items: end;
@@ -691,6 +691,7 @@ section#video.section h1{
     background-image: url(/Project1-Museum/images/pictures/dividing-line-parallax.jpg);
     background-size: cover;
     background-attachment: fixed;
+    background-repeat: no-repeat;
 }
 
 #contacts{
@@ -731,6 +732,7 @@ section#video.section h1{
         font-size: 50px;
         font-weight: 400;
         line-height: 90px;
+        margin-right: 40px;
 
     }
 
@@ -740,7 +742,7 @@ section#video.section h1{
     }
 
     #welcome,#explore,#gallery,.dividing-line{
-        min-width: 1024px;
+        max-width: 1024px;
     }
 
     #welcome{
@@ -797,10 +799,6 @@ section#video.section h1{
         display: none; 
     }
 
-    .welcome-slider{
-        bottom: 1px;  
-    }
-
     #visiting{
         display: block;
         height: 1313px;
@@ -811,6 +809,7 @@ section#video.section h1{
     #visiting h1{
         font-size: 50px;
         margin: 20px;
+        margin-right: 40px;
     }
 
     .tour-block-header{
@@ -939,8 +938,8 @@ section#video.section h1{
     }
 
     .dividing-line{
-        background-image: url(/Project1-Museum/images/pictures/dividing-line-parallax1024.jpg);
-        background-attachment: local;
+        background-image: url(/Project1-Museum/images/pictures/dividing-line-parallax.jpg);
+        background-position: 75% 50%;
     }
 
     .lovre-location-image{
@@ -950,6 +949,10 @@ section#video.section h1{
 
     .contacts-info *{
         font-size: 20px;
+    }
+
+    .contacts-head{
+        margin-right: -40px;
     }
 
     footer div.section{
@@ -968,14 +971,24 @@ section#video.section h1{
 }
 
 @media (max-width: 768px) {
+    #welcome,#explore,#gallery,.dividing-line{
+        max-width: 768px;
+    }
+
+    .header-container,.section{
+        width: 768px;
+    }
+
     .welcome-section{
         flex-direction: column;
         align-items: center;
+        height: 861px;
     }
 
     .welcome-title{
         position: relative;
         justify-items: center;
+        top: 0px;
     }
 
     .welcome-title h1{
@@ -998,9 +1011,151 @@ section#video.section h1{
     .monolisa{
         position: relative;
         background-position:center;
+        width: 728px;
+        height: 546px;
+        background-size: cover;
+        margin-left: -35px;
     }
 
     .monolisa::after{
         display: none;
+    }
+
+    .welcome-slider{
+        position: relative;
+        bottom: 0px;
+    }
+
+    #visiting{
+        padding-top: 0px;
+        height: 1146px;
+    }
+
+    .visiting-container{
+        padding: 40px 56px;
+    }
+
+    .tour-block-header{
+        font-size: 22px;
+        letter-spacing: 3px;
+    }
+
+    #visiting div.visiting-tour-block{
+        height: 301px;
+        width: 280px;
+    }
+
+    #explore{
+        height: 958px;
+    }
+
+    .explore-about{
+        display: none;
+    }
+
+    .explore-slider{
+        top: -20px;
+        align-self: self-start;
+    }
+
+    .explore-pic{
+        width: 728px;
+        height: 705px;
+    }
+    
+    #video{
+        height: 757px; 
+    }
+
+    .video-grid-container { 
+        gap: 20px;
+        grid-template-columns: 354px 354px;
+        grid-template-rows: auto auto 15px;
+        grid-template-areas:
+        "big-video big-video"
+        "small-video small-video"
+        "video-slider video-slider";
+    }
+
+    .small-video:nth-child(3){
+        display: none;
+    }
+
+    .big-video{
+        width: 728px;
+    }
+
+    .small-video{
+        width: 354px;
+    }
+
+    .gallery-side-flex:nth-child(3){
+        display: none;
+    }
+
+    .gallery-flex-container div{
+        max-width: 352px;
+        flex-shrink: 1;
+    }
+
+    .gallery-flex-container{
+        margin-top: 0px;
+        column-gap: 24px;
+    }
+
+    .tickets-image img{
+        width: 444px;
+        height: 340px;
+    }
+
+    .dividing-line{
+        background-position: 75% 50%;
+        background-repeat: no-repeat;
+        height: 300px;
+    }
+
+    .contacts-grid-container{
+        display: flex;
+        flex-direction: column;
+        row-gap: 40px;
+    }
+
+    .lovre-location-image{
+        width: 728px;
+        height: 476px;
+    }
+
+    .contacts-head{
+        margin-right: 0px;
+    }
+
+    .nav1 *,.nav2 *{
+        font-size: 18px;
+        font-weight: 100;
+        justify-content: start;
+    }
+
+    .footer-container div.section{
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas: 'louvre nav nav'
+                              '. socials socials';
+        
+    }
+
+    .socials-list{
+        justify-content: start;
+    }
+
+    .footer-container::after{
+        bottom: 100px;
+    }
+
+    .flex-footer{
+        padding: 40px 20px;
+    }
+
+    footer .nav-container{
+        justify-content: flex-start;
     }
 }
