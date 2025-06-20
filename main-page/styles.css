@@ -249,7 +249,7 @@ a.socials-link:nth-child(5){
 
 #welcome{
     position: relative;
-
+    padding-bottom: 50px;
     color: #ffffff;
     background-color: #030303;
     box-shadow: 0px 5px 5px grey;
@@ -308,17 +308,6 @@ a.socials-link:nth-child(5){
     left: 410px;
     background: linear-gradient(90deg,rgba(3, 3, 3, 1) 0%, rgba(3, 3, 3, 0.5) 16%, rgba(3, 3, 3, 0) 31%);
     z-index: 10;
-}
-
-.welcome-slider{
-    position: absolute;
-    box-sizing: border-box;
-    width: 600px;
-    height: 120px;
-    bottom: 0px;
-    color:#ffffff;
-    background-color: #030303;
-    z-index: 100;
 }
 
 #visiting{
@@ -726,6 +715,154 @@ section#video.section h1{
     background-image: url(/Project1-Museum/images/pictures/map.jpg);
     height: 620px;
     width: 960px;
+}
+
+.welcome-slider-container{
+    position: relative;
+    width: 1000px;
+    height: 100%;
+}
+
+.welcome-slider{
+    position: relative;
+    background-color: gray;
+    height: 100%;
+    overflow: hidden;
+}
+
+.slider-border-shadow{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0px;
+    background: linear-gradient(90deg,rgba(3, 3, 3, 1) 0%, rgba(3, 3, 3, 0.5) 16%, rgba(3, 3, 3, 0) 31%);
+    z-index: 10;
+}
+
+
+.slider-image-wrapper{
+    display: flex;
+    position: absolute;
+    width: 1000px;
+    height: 100%;
+}
+
+.slider-controller-tab{
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    right: 0px;
+    bottom: 0px;
+    width: 300px;
+    height: 60px;
+    color: white;
+    background-color: black;
+    user-select: none;
+    z-index: 100;
+}
+
+.page-list{
+    display: flex;
+    list-style: none;
+}
+
+.page-list-item{
+    width: 16px;
+    height: 16px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.page-list-item:hover{
+    color: #9d8665;
+}
+
+.controller{
+    width: 32px;
+    height: 8px;
+    cursor: pointer;
+}
+
+.controller:hover{
+    color: #9d8665;
+}
+
+.item{
+    display: none;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.prev,.active,.next{
+    display: block;
+    position: absolute;
+}
+
+.prev{
+    left: -100%;
+}
+
+.next{
+    left: 100%;
+}
+
+.active{
+    left: 0;
+}
+
+.item:nth-child(1){
+    background-image: url(/Project1-Museum/images/pictures/1.jpg);
+}
+
+.item:nth-child(2){
+    background-image: url(/Project1-Museum/images/pictures/2.jpg);
+}
+
+.item:nth-child(3){
+    background-image: url(/Project1-Museum/images/pictures/3.jpg);
+}
+
+.item:nth-child(4){
+    background-image: url(/Project1-Museum/images/pictures/4.jpg);
+}
+
+.item:nth-child(5){
+    background-image: url(/Project1-Museum/images/pictures/5.jpg);
+}
+
+.current{
+    color: #D2B183;
+}
+
+.to-right{
+    animation: to-right 0.7s ease-in-out;
+}
+
+.to-left{
+    animation: to-left 0.7s ease-in-out;
+}
+
+@keyframes to-right{
+    0%{
+        left: 0;
+    }
+    100%{
+        left: 100%;
+    }
+}
+
+@keyframes to-left{
+    0%{
+        left: 0%;
+    }
+    100%{
+        left: -100%;
+    }
 }
 
 @media (max-width: 1024px) {
