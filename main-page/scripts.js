@@ -31,39 +31,64 @@ function prevItem(n){
     changeCurrentItem(n-1);
 }
 
-
+const swipeRight = () =>{
+    slider.classList.add('to-right');
+    prevItem(currentItem);
+    slider.addEventListener('animationend', function (){
+        slider.classList.remove('to-right');
+        refreshItems();
+        isEnabled=true;
+    });
+}
 
 const handleFromLeftToRight = () =>{
     if (isEnabled){
         isEnabled=false;
-        slider.classList.add('to-right');
-        prevItem(currentItem);
-        slider.addEventListener('animationend', function (){
-            slider.classList.remove('to-right');
-            refreshItems();
-            isEnabled=true;
-        });
+        swipeRight();
         refreshPageCount();
     }
+}
+
+const swipeLeft = () =>{
+    slider.classList.add('to-left');
+    nextItem(currentItem);
+    slider.addEventListener('animationend', function (){
+        slider.classList.remove('to-left');
+        refreshItems();
+        isEnabled=true;
+    });
 }
 
 const handleFromRightToLeft = () =>{
     if (isEnabled){
         isEnabled=false;
-        slider.classList.add('to-left');
-        nextItem(currentItem);
-        slider.addEventListener('animationend', function (){
-            slider.classList.remove('to-left');
-            refreshItems();
-            isEnabled=true;
-        });
+        swipeLeft();
         refreshPageCount();
     }
 }
 
+const handleListClick = (event) => {
+    if (isEnabled){
+        if (event.target.tagName === 'LI' /*&& !event.target.classList.contains('current')*/) {
+            isEnabled=false;
+            document.querySelector('.current').classList.remove('current');
+            event.target.classList.add('current');
+            while(!items[currentItem].classList.contains('current')){
+                nextItem(currentItem);
+            }
+            //images[currentItem].classList.add('.fade-in');
+            slider.addEventListener('animationend', function (){
+                refreshItems();
+            });
+            isEnabled=true;
+            refreshPageCount();
+        }
+    }
+}
+
+document.querySelector('.page-list').addEventListener('click', handleListClick);
 document.querySelector('.right-arrow').addEventListener('click', handleFromRightToLeft);
 document.querySelector('.left-arrow').addEventListener('click', handleFromLeftToRight);
-document.body.addEventListener('mouse', refreshPageCount);
 
 function swipeDetect(el){
     let startX = 0;

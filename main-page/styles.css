@@ -847,6 +847,14 @@ section#video.section h1{
     animation: to-left 0.7s ease-in-out;
 }
 
+.fade-in{
+    display: block;
+    animation: fade 0.5s ease-in-out;
+    animation-direction: reverse;
+    left: 0;
+    z-index: 10;
+}
+
 @keyframes to-right{
     0%{
         left: 0;
@@ -862,6 +870,15 @@ section#video.section h1{
     }
     100%{
         left: -100%;
+    }
+}
+
+@keyframes fade{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
     }
 }
 
