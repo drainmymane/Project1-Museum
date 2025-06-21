@@ -80,8 +80,8 @@ const handleListClick = (event) => {
             images[currentItem].addEventListener('animationend', function (){
                 images[currentItem].classList.remove('fade-in');
                 refreshItems();
+                isEnabled=true;
             });
-            isEnabled=true;
             refreshPageCount();
         }
     }
