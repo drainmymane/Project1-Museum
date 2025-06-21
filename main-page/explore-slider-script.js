@@ -55,7 +55,7 @@ function initComparisons() {
     }
     function getCursorPos(e) {
       var a, x = 0;
-      e = e || window.event;
+      e = e || window.e;
       a = img.getBoundingClientRect();
       x = e.pageX - a.left;
       x = x - window.pageXOffset;
