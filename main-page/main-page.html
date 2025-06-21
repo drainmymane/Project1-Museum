@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="styles.css">
+    <script src="/Project1-Museum/main-page/explore-slider-script.js"></script>
 </head>
 <body>
     <div class="container">
@@ -135,7 +136,12 @@
                         <p class="explore-about">The cleaning provoked furious protests, not because the picture had been damaged in any way, but because it looked different.</p>
                     </div>
                     <div class="explore-slider">
-                        <img class="explore-pic" src="/Project1-Museum/images/pictures/explore-picture.png" alt="explore">
+                        <div class="img-comp-img">
+                            <img class="explore-pic" src="/Project1-Museum/images/pictures/explore-picture-right.jpg" alt="explore1">
+                        </div>
+                        <div class="img-comp-img img-comp-overlay">
+                            <img class="explore-pic" src="/Project1-Museum/images/pictures/explore-picture-left.jpg" alt="explore2">
+                        </div>
                     </div>
                 </div>
             </section>
@@ -289,5 +295,6 @@
         </footer>
     </div>
     <script src="/Project1-Museum/main-page/scripts.js"></script>
+    <script>initComparisons();</script>
 </body>
 </html>

@@ -401,11 +401,6 @@ a.socials-link:nth-child(5){
     margin-right: 60px;
 }
 
-.explore-slider{
-    position: relative;
-    top: 15px;
-}
-
 .explore-head{
     margin-bottom: 75px;
     white-space: nowrap;
@@ -413,6 +408,7 @@ a.socials-link:nth-child(5){
 }
 
 .explore-about{
+    max-width: 660px;
     margin-bottom: 25px;
 }
 
@@ -901,6 +897,63 @@ section#video.section h1{
     }
 }
 
+.explore-slider,.img-comp-img,.img-comp-img img,.img-comp-slider{
+    box-sizing: border-box;
+}
+
+.explore-slider {
+  position: relative;
+  top: 15px;
+  width: 720px;
+  height: 700px;
+  overflow: hidden;
+}
+
+.img-comp-img {
+  position: absolute;
+  width: auto;
+  height: auto;
+  overflow:hidden;
+}
+
+.explore-pic {
+  display:block;
+  vertical-align: middle;
+}
+
+.img-comp-slider {
+  position: absolute;
+  z-index:2;
+  cursor: ew-resize;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider-handle {
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border-radius: 50%;
+  border: 2px solid white;
+
+}
+.slider-line {
+    position: absolute;
+    width: 3px;
+    height: 100vh; 
+    background-color: white;
+}
+.slider-line.top {
+  bottom: 90%;
+}
+.slider-line.bottom {
+  top: 90%;
+}
+
 @media (max-width: 1024px) {
     h1{
         font-size: 50px;
@@ -1018,6 +1071,7 @@ section#video.section h1{
 
     .explore-text{
         display: flex;
+        flex-shrink: 1;
         flex-direction: column;
         margin-bottom: 0px;
         margin-right: 0px;
@@ -1239,12 +1293,14 @@ section#video.section h1{
     .explore-slider{
         top: -20px;
         align-self: self-start;
-    }
-
-    .explore-pic{
         width: 728px;
         height: 705px;
     }
+
+    /* .explore-pic{
+        width: 728px;
+        height: 705px;
+    } */
     
     #video{
         height: 757px; 
@@ -1432,12 +1488,14 @@ section#video.section h1{
     .explore-slider{
         top: -20px;
         left: 20px;
-    }
-
-    .explore-pic{
         width: 380px;
         height: 368px;
     }
+
+    /* .explore-pic{
+        width: 380px;
+        height: 368px;
+    } */
 
     #video{
         margin: auto 20px;
