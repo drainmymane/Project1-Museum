@@ -98,7 +98,7 @@ p{
     margin-right: 25px;
     width: 49px;
     height: 26px;
-    background-image: url(/Project1-Museum/images/icons/luvr_triangle.svg);
+    background-image: url(/images/icons/luvr_triangle.svg);
     background-size: contain;
     background-repeat: no-repeat;
 }
@@ -307,7 +307,7 @@ a.socials-link:nth-child(5){
     position: relative;
     width: 100%;
     height: 750px;
-    background-image: url(/Project1-Museum/images/pictures/monolisa.jpg);
+    background-image: url(/images/pictures/monolisa.jpg);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: calc(100% - 20px) calc(100% - 10px);
