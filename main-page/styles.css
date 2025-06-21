@@ -2,6 +2,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Forum&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Forum&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
+.map-container{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+iframe{
+    width: 100%;
+    height: 100%;
+}
+
 *{
     font-size: 22px;
     font-family: Roboto;
@@ -148,6 +159,7 @@ p{
     position: relative;
     color: #ffffff;
     background-color: #030303;
+    font-weight: 100;
 }
 
 .footer-container div.section{
@@ -163,7 +175,7 @@ p{
 }
 
 .footer-louvre{
-    grid-area: 'louvre';
+    grid-area: louvre;
     align-self: center;
 }
 
@@ -179,7 +191,7 @@ p{
 }
 
 .socials-list{
-    grid-area: 'socials';
+    grid-area: socials;
     display: flex;
     justify-content: end;
     align-items: end;
@@ -248,7 +260,7 @@ a.socials-link:nth-child(5){
 
 #welcome{
     position: relative;
-
+    padding-bottom: 50px;
     color: #ffffff;
     background-color: #030303;
     box-shadow: 0px 5px 5px grey;
@@ -275,17 +287,19 @@ a.socials-link:nth-child(5){
     font-size: 28px;
 }
 
-.welcome-title div{
+.welcome-title a{
     box-sizing: border-box;
     padding: 26px 64px;
     width: 361px;
     border-radius: 10px;
+    color: white;
     background-color: #710707;
     transition: 0.5s;
     cursor: pointer;
+    text-decoration: none;
 }
 
-.welcome-title div:hover{
+.welcome-title a:hover{
     background-color: #9d8665;
 }
 
@@ -307,17 +321,6 @@ a.socials-link:nth-child(5){
     left: 410px;
     background: linear-gradient(90deg,rgba(3, 3, 3, 1) 0%, rgba(3, 3, 3, 0.5) 16%, rgba(3, 3, 3, 0) 31%);
     z-index: 10;
-}
-
-.welcome-slider{
-    position: absolute;
-    box-sizing: border-box;
-    width: 600px;
-    height: 120px;
-    bottom: 0px;
-    color:#ffffff;
-    background-color: #030303;
-    z-index: 100;
 }
 
 #visiting{
@@ -342,6 +345,12 @@ a.socials-link:nth-child(5){
 .visiting-tour-block{
     display: flex;
     flex-direction: column;
+}
+
+.visiting-tour-block img:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
 }
 
 .tour-block-header{
@@ -624,7 +633,7 @@ section#video.section h1{
     margin-bottom: 25px;
 }
 
-.tickets-amount div,p{
+.tickets-amount div, .tickets-amount p{
     margin-bottom: 5px;
     font-size: 22px;
     font-weight: 300;
@@ -691,6 +700,7 @@ section#video.section h1{
     background-image: url(/Project1-Museum/images/pictures/dividing-line-parallax.jpg);
     background-size: cover;
     background-attachment: fixed;
+    background-repeat: no-repeat;
 }
 
 #contacts{
@@ -726,12 +736,182 @@ section#video.section h1{
     width: 960px;
 }
 
+.welcome-slider-container{
+    position: relative;
+    width: 1000px;
+    height: 100%;
+}
+
+.welcome-slider{
+    position: relative;
+    background-color: gray;
+    height: 100%;
+    overflow: hidden;
+}
+
+.slider-border-shadow{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0px;
+    background: linear-gradient(90deg,rgba(3, 3, 3, 1) 0%, rgba(3, 3, 3, 0.5) 16%, rgba(3, 3, 3, 0) 31%);
+    z-index: 10;
+}
+
+
+.slider-image-wrapper{
+    display: flex;
+    position: absolute;
+    width: 1000px;
+    height: 100%;
+}
+
+.slider-controller-tab{
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    right: 0px;
+    bottom: 0px;
+    width: 300px;
+    height: 60px;
+    color: white;
+    background-color: black;
+    user-select: none;
+    z-index: 100;
+}
+
+.page-list{
+    display: flex;
+    list-style: none;
+}
+
+.page-list-item{
+    width: 16px;
+    height: 16px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.page-list-item:hover{
+    color: #9d8665;
+}
+
+.controller{
+    width: 32px;
+    height: 8px;
+    cursor: pointer;
+}
+
+.controller:hover{
+    color: #9d8665;
+}
+
+.item{
+    display: none;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.prev,.active,.next{
+    display: block;
+    position: absolute;
+}
+
+.prev{
+    left: -100%;
+}
+
+.next{
+    left: 100%;
+}
+
+.active{
+    left: 0;
+}
+
+.item:nth-child(1){
+    background-image: url(/Project1-Museum/images/pictures/1.jpg);
+}
+
+.item:nth-child(2){
+    background-image: url(/Project1-Museum/images/pictures/2.jpg);
+}
+
+.item:nth-child(3){
+    background-image: url(/Project1-Museum/images/pictures/3.jpg);
+}
+
+.item:nth-child(4){
+    background-image: url(/Project1-Museum/images/pictures/4.jpg);
+}
+
+.item:nth-child(5){
+    background-image: url(/Project1-Museum/images/pictures/5.jpg);
+}
+
+.current{
+    color: #D2B183;
+}
+
+.to-right{
+    animation: to-right 0.7s ease-in-out;
+}
+
+.to-left{
+    animation: to-left 0.7s ease-in-out;
+}
+
+.fade-in{
+    display: block;
+    animation: fade 0.5s ease-in-out;
+    animation-direction: reverse;
+    left: 0;
+    z-index: 10;
+}
+
+@keyframes to-right{
+    0%{
+        left: 0;
+    }
+    100%{
+        left: 100%;
+    }
+}
+
+@keyframes to-left{
+    0%{
+        left: 0%;
+    }
+    100%{
+        left: -100%;
+    }
+}
+
+@keyframes fade{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
 @media (max-width: 1024px) {
     h1{
         font-size: 50px;
         font-weight: 400;
         line-height: 90px;
+        margin-right: 40px;
 
+    }
+
+    #welcome,#explore,#gallery,.dividing-line{
+        min-width: auto;
     }
 
     .section{
@@ -740,7 +920,7 @@ section#video.section h1{
     }
 
     #welcome,#explore,#gallery,.dividing-line{
-        min-width: 1024px;
+        max-width: 1024px;
     }
 
     #welcome{
@@ -797,10 +977,6 @@ section#video.section h1{
         display: none; 
     }
 
-    .welcome-slider{
-        bottom: 1px;  
-    }
-
     #visiting{
         display: block;
         height: 1313px;
@@ -811,6 +987,7 @@ section#video.section h1{
     #visiting h1{
         font-size: 50px;
         margin: 20px;
+        margin-right: 40px;
     }
 
     .tour-block-header{
@@ -939,8 +1116,8 @@ section#video.section h1{
     }
 
     .dividing-line{
-        background-image: url(/Project1-Museum/images/pictures/dividing-line-parallax1024.jpg);
-        background-attachment: local;
+        background-image: url(/Project1-Museum/images/pictures/dividing-line-parallax.jpg);
+        background-position: 75% 50%;
     }
 
     .lovre-location-image{
@@ -950,6 +1127,10 @@ section#video.section h1{
 
     .contacts-info *{
         font-size: 20px;
+    }
+
+    .contacts-head{
+        margin-right: -40px;
     }
 
     footer div.section{
@@ -968,14 +1149,25 @@ section#video.section h1{
 }
 
 @media (max-width: 768px) {
+    #welcome,#explore,#gallery,.dividing-line{
+        max-width: 768px;
+        min-width: auto;
+    }
+
+    .header-container,.section{
+        width: 768px;
+    }
+
     .welcome-section{
         flex-direction: column;
         align-items: center;
+        height: 861px;
     }
 
     .welcome-title{
         position: relative;
         justify-items: center;
+        top: 0px;
     }
 
     .welcome-title h1{
@@ -998,9 +1190,391 @@ section#video.section h1{
     .monolisa{
         position: relative;
         background-position:center;
+        width: 728px;
+        height: 546px;
+        background-size: cover;
+        margin-left: -35px;
     }
 
     .monolisa::after{
         display: none;
+    }
+
+    .welcome-slider{
+        position: relative;
+        bottom: 0px;
+    }
+
+    #visiting{
+        padding-top: 0px;
+        height: 1146px;
+    }
+
+    #visiting h1 {
+        width: 708px;
+    }
+    
+    .visiting-container{
+        padding: 40px 56px;
+    }
+
+    .tour-block-header{
+        font-size: 22px;
+        letter-spacing: 3px;
+    }
+
+    #visiting div.visiting-tour-block{
+        height: 301px;
+        width: 280px;
+    }
+
+    #explore{
+        height: 958px;
+    }
+
+    .explore-about{
+        display: none;
+    }
+
+    .explore-slider{
+        top: -20px;
+        align-self: self-start;
+    }
+
+    .explore-pic{
+        width: 728px;
+        height: 705px;
+    }
+    
+    #video{
+        height: 757px; 
+    }
+
+    .video-grid-container { 
+        gap: 20px;
+        grid-template-columns: 354px 354px;
+        grid-template-rows: auto auto 15px;
+        grid-template-areas:
+        "big-video big-video"
+        "small-video small-video"
+        "video-slider video-slider";
+    }
+
+    .small-video:nth-child(3){
+        display: none;
+    }
+
+    .big-video{
+        width: 728px;
+    }
+
+    .small-video{
+        width: 354px;
+    }
+
+    .gallery-side-flex:nth-child(3){
+        display: none;
+    }
+
+    .gallery-flex-container div{
+        max-width: 352px;
+        flex-shrink: 1;
+    }
+
+    .gallery-flex-container{
+        margin-top: 0px;
+        column-gap: 24px;
+    }
+
+    .tickets-image img{
+        width: 444px;
+        height: 340px;
+    }
+
+    .dividing-line{
+        background-position: 75% 50%;
+        background-repeat: no-repeat;
+        height: 300px;
+    }
+
+    .contacts-grid-container{
+        display: flex;
+        flex-direction: column;
+        row-gap: 40px;
+    }
+
+    .lovre-location-image{
+        width: 728px;
+        height: 476px;
+    }
+
+    .contacts-head{
+        margin-right: 0px;
+    }
+
+    .nav1 *,.nav2 *{
+        font-size: 18px;
+        justify-content: start;
+    }
+
+    .footer-container div.section{
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas: 'louvre nav nav'
+                              '. socials socials';
+        
+    }
+
+    .socials-list{
+        justify-content: start;
+    }
+
+    .footer-container::after{
+        bottom: 100px;
+    }
+
+    .flex-footer{
+        padding: 40px 20px;
+    }
+
+    footer .nav-container{
+        justify-content: flex-start;
+    }
+
+}
+
+@media (max-width: 420px) {
+    #welcome,#explore,#gallery,.dividing-line{
+        max-width: 420px;
+        min-width: auto;
+    }
+
+    .header-container,.section{
+        width: 420px;
+    }
+
+    .section{
+        margin-left: 0px;
+    }
+
+    .welcome-section{
+        height: 544px;
+    }
+
+    h1{
+        font-size: 28px;
+        line-height: 40px;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .welcome-title{
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .welcome-title h1{
+        font-size: 28px;
+        padding: 0px;
+    }
+
+    .welcome-title h3{
+        padding-top: 25px;
+        font-size: 16px;
+    }
+
+    .welcome-slider{
+        width: 230px;
+        height: 40px;
+        margin-top: 20px;
+    }
+
+    .monolisa{
+        width: 380px;
+        height: 285px;
+        margin: auto;
+    }
+
+    #visiting{
+        height: auto;
+    }
+
+    .explore-head,#visiting h1,.tickets-head{
+        width: 380px;
+    }
+
+    #visiting h1 {
+        line-height: 40px;
+        font-size: 28px;
+        padding-bottom: 20px;
+    }
+
+    .visiting-container{
+        flex-direction: column;
+        padding: 20px 70px;
+    }
+
+    #explore{
+        margin: 0px;
+        height: 501px;
+        margin-bottom: 36px;
+    }
+
+    .explore-section{
+        margin: 40px auto;
+    }
+
+    .explore-head{
+        margin-bottom: 50px;
+    }
+
+    .explore-slider{
+        top: -20px;
+        left: 20px;
+    }
+
+    .explore-pic{
+        width: 380px;
+        height: 368px;
+    }
+
+    #video{
+        margin: auto 20px;
+        height: 475px;
+    }
+
+    .video-grid-container { 
+        gap: 40px 20px;
+        grid-template-columns: repeat(2, 180px);
+        grid-template-rows: auto auto 15px;
+        grid-template-areas:
+        "big-video big-video"
+        "small-video small-video"
+        "video-slider video-slider";
+    }
+
+    .big-video{
+        width: 380px;
+        height: 226px;
+    }
+
+    .small-video{
+        width: 180px;
+    }
+
+    #gallery{
+        height: 757px;
+    }
+
+    .gallery-section{
+        margin-left: 20px;
+    }
+
+    .gallery-flex-container{
+        margin-top: 40px;
+
+    }
+
+    .gallery-flex-container div{
+        max-width: 178px;
+    }
+
+    .gallery-head{
+        margin-top: 40px;
+    }
+
+    .tickets-image img{
+        width: 380px;
+        height: 160px;
+        object-fit: cover;
+    }
+
+    .tickets-grid-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 40px;
+        column-gap: 0px;
+        margin-left: -40px;
+    }
+
+    .tickets-amount div{
+        margin-bottom: 20px;
+    }
+
+    #total-euro{
+        margin: 40px auto 20px;
+    }
+
+    .tickets-head h1{
+        padding-bottom: 20px;
+    }
+
+    .dividing-line{
+        background-position: 63% 50%;
+    }
+
+    #tickets,#contacts{
+        margin-left: 20px;
+        height: auto;
+    }
+
+    .lovre-location-image{
+        width: 380px;
+        height: 248px;
+        background-size: 300%;
+        background-position: 50%;
+    }
+
+    .contacts-head{
+        margin-right: 40px;
+    }
+
+    .footer-container div.section{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .footer-container .nav-list{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .nav1 *,.nav2 *{
+        margin-top: 0px;
+        font-size: 16px;
+    }
+
+    .flex-footer{
+        width: 90%;
+    }
+
+    .nav-link{
+        margin-left: 20px;
+        margin-right: 45px;
+    }
+
+    .flex-footer :nth-child(2){
+        display: none;
+    }
+
+    .socials-list{
+        justify-content: center;
+    }
+
+    a.socials-link{
+        margin-left: 5px;
+    }
+
+    .footer-louvre{
+        align-self: start;
+        font-size: 16px;
+        margin-top: 40px;
+    }
+
+    .footer-container .louvre-logo{
+        width: 29px;
+        height: 16px;
     }
 }
