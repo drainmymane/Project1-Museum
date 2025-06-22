@@ -865,36 +865,8 @@ section#video.section h1{
 .fade-in{
     display: block;
     animation: fade 0.5s ease-in-out;
-    animation-direction: reverse;
     left: 0;
     z-index: 10;
-}
-
-@keyframes to-right{
-    0%{
-        left: 0;
-    }
-    100%{
-        left: 100%;
-    }
-}
-
-@keyframes to-left{
-    0%{
-        left: 0%;
-    }
-    100%{
-        left: -100%;
-    }
-}
-
-@keyframes fade{
-    0%{
-        opacity: 1;
-    }
-    100%{
-        opacity: 0;
-    }
 }
 
 .explore-slider,.img-comp-img,.img-comp-img img,.img-comp-slider{
@@ -952,6 +924,48 @@ section#video.section h1{
 }
 .slider-line.bottom {
   top: 90%;
+}
+
+.in-view{
+    animation: in-view 1s ease-in-out;
+}
+
+@keyframes to-right{
+    0%{
+        left: 0;
+    }
+    100%{
+        left: 100%;
+    }
+}
+
+@keyframes to-left{
+    0%{
+        left: 0%;
+    }
+    100%{
+        left: -100%;
+    }
+}
+
+@keyframes fade{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes in-view{
+    0%{
+        opacity: 0;
+        transform: translate(0, 2rem);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0, 0);
+    }
 }
 
 @media (max-width: 1024px) {
