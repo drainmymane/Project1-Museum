@@ -512,8 +512,9 @@ section#video.section h1{
 }
 
 .gallery-element{
-    opacity: 0;
     margin-bottom: 24px;
+    opacity: 0;
+    z-index: 3;
 }
 
 #tickets{
@@ -962,7 +963,7 @@ section#video.section h1{
 @keyframes in-view{
     0%{
         opacity: 0;
-        transform: translate(0, 2rem);
+        transform: translate(0, 1rem);
     }
     100%{
         opacity: 1;
