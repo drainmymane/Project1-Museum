@@ -67,3 +67,7 @@ function initComparisons() {
     }
   }
 }
+
+window.addEventListener("load", (event) => {
+  initComparisons();
+});

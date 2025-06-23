@@ -512,6 +512,7 @@ section#video.section h1{
 }
 
 .gallery-element{
+    opacity: 0;
     margin-bottom: 24px;
 }
 
@@ -927,6 +928,7 @@ section#video.section h1{
 }
 
 .in-view{
+    opacity: 1;
     animation: in-view 1s ease-in-out;
 }
 
