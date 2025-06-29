@@ -5,7 +5,7 @@ const permanentTicket = 20;
 const temporaryTicket = 25;
 const combinedTicket = 40;
 const arrMode = [permanentTicket, temporaryTicket, combinedTicket];
-let radioMode = null;
+let radioMode = 0;
 const arrType = document.querySelectorAll('.tickets-radio input');
 
 function getSelectedValue() {
@@ -26,9 +26,9 @@ function handlePriceChange(){
 }
 
 window.addEventListener("load", (event) => {
-    basic_amount.value = localStorage.getItem('basic_amount');
-    senior_amount.value = localStorage.getItem('senior_amount');
-    radioMode = localStorage.getItem('radio_mode');
+    if (localStorage.basic_amount) basic_amount.value = localStorage.getItem('basic_amount');
+    if (localStorage.senior_amount) senior_amount.value = localStorage.getItem('senior_amount');
+    if (localStorage.senior_amount) radioMode = localStorage.getItem('radio_mode');
     getSelectedValue();
     arrType[radioMode].checked=true;
     document.querySelector('#total-euro .full-price').innerHTML = fullPrice;
