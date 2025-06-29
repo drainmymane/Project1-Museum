@@ -1,0 +1,39 @@
+let basic_amount = document.querySelector('.basic-amount .number');
+let senior_amount = document.querySelector('.senior-amount .number');
+let fullPrice = 30;
+const permanentTicket = 20;
+const temporaryTicket = 25;
+const combinedTicket = 40;
+const arrMode = [permanentTicket, temporaryTicket, combinedTicket];
+let radioMode = null;
+const arrType = document.querySelectorAll('.tickets-radio input');
+
+function getSelectedValue() {
+    for (let i=0; i<arrType.length; i++){   
+        if (arrType[i].checked) {
+            radioMode = i;
+        }
+    }
+    handlePriceChange();
+}
+
+function handlePriceChange(){
+    fullPrice = arrMode[radioMode] * (+basic_amount.value + (+senior_amount.value/2.0));
+    document.querySelector('#total-euro .full-price').innerHTML = fullPrice;
+    localStorage.setItem('basic_amount', +basic_amount.value);
+    localStorage.setItem('senior_amount', +senior_amount.value);
+    localStorage.setItem('radio_mode', radioMode);
+}
+
+window.addEventListener("load", (event) => {
+    basic_amount.value = localStorage.getItem('basic_amount');
+    senior_amount.value = localStorage.getItem('senior_amount');
+    radioMode = localStorage.getItem('radio_mode');
+    getSelectedValue();
+    arrType[radioMode].checked=true;
+    document.querySelector('#total-euro .full-price').innerHTML = fullPrice;
+});
+
+document.querySelector('.tickets-type').addEventListener('change', getSelectedValue);
+document.querySelector('.basic-amount').addEventListener('click', handlePriceChange);
+document.querySelector('.senior-amount').addEventListener('click', handlePriceChange);
