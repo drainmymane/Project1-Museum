@@ -632,6 +632,7 @@ section#video.section h1{
 }
 
 .tickets-amount div, .tickets-amount p{
+    margin-top: 5px;
     margin-bottom: 5px;
     font-size: 22px;
     font-weight: 300;
@@ -640,7 +641,7 @@ section#video.section h1{
 .tickets-amount form{
     display: flex;
     justify-content: space-between;
-    width: 100px;
+    width: 150px;
     height: 50px;
     padding: 0px 14px;
     border: 3px solid #000000;
@@ -656,12 +657,20 @@ section#video.section h1{
     cursor: pointer;
 }
 
+.number{
+    align-items: center;
+}
 
-.number {
+.number > *{
     all: unset;
-    margin-left: 10px;
     text-align: center;
 }
+
+.tickets-amount .number > *{
+    margin-left: 10px;
+    font-size: 32px;
+}
+
 
 #total-euro{
     margin-top: 50px;
@@ -707,7 +716,8 @@ section#video.section h1{
 .booking-tickets-wrapper{
     position: absolute;
     display: grid;
-    grid-template-rows: auto auto auto;
+    
+    grid-template-columns: 1fr 1fr;
     column-gap: 40px;
     grid-template-areas: "head total"
                         "info total"
@@ -721,14 +731,95 @@ section#video.section h1{
     z-index: 10001;
 }
 
+.booking-tickets-info select{
+    height: 45px;
+    width: 100%;
+    border: #000000 solid 1px;
+    cursor: pointer;
+}
+
+.booking-tickets-info input{
+    box-sizing: border-box;
+    height: 45px;
+    width: 100%;
+    padding: 15px;
+    border: #000000 solid 1px;
+    color: #000000;
+    cursor: pointer;
+}
+
+/* .booking-tickets-info input::after{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 10000000;
+    background-color: #ffffff;
+} */
+
+.booking-tickets-info div{
+    margin-bottom: 20px;
+}
+
+.date-time{
+    display: flex;
+}
+
+.date{
+    margin-right: 20px;
+}
+
+.booking-tickets-wrapper *{
+    font-weight: 400;
+}
+
+.booking-tickets-wrapper h1{
+    font-size: 32px;
+    padding-bottom: 15px;
+}
+
+.booking-tickets-wrapper h2{
+    font-size: 28px;
+}
+
+.booking-tickets-wrapper h3{
+    font-size: 22px;
+}
+
+.booking-tickets-wrapper h4{
+    font-size: 18px;
+}
+
 .booking-tickets-wrapper > header{
     grid-area: head;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 60px;
+    user-select: none;
+}
+
+.booking-tickets-wrapper > header h1{
+    font-size: 50px;
+    letter-spacing: 0px;
+}
+
+.booking-tickets-wrapper > header .header-logo{
+    cursor: auto;
+}
+
+.booking-tickets-wrapper > header h1{
+    color: #9D8665;
+}
+
+.booking-tickets-wrapper > header h4{
+    padding-bottom: 10px;
+    color: #710707;
+    border-bottom: #710707 solid 2px;
 }
 
 .booking-tickets-wrapper > .booking-tickets-total{
     grid-area: total;
     height: 100%;
-    border: #000000 solid 3px;
+    border: #000000 solid 1px;
 }
 
 .booking-tickets-wrapper > .booking-tickets-info{
@@ -737,9 +828,54 @@ section#video.section h1{
 
 .booking-tickets-wrapper > .booking-tickets-entry{
     grid-area: tickets;
+    padding: 10px 15px 15px;
+    border: #000000 solid 1px;
 }
 
+.booking-tickets-entry h4{
+    color: #9D8665;
+    border-bottom: #710707 solid 2px;
+    padding-bottom: 10px;
+}
 
+.booking-tickets-entry .basic-amount,.booking-tickets-entry .senior-amount{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.booking-tickets-entry .basic-amount{
+    margin-top: 15px;
+    margin-bottom: 18px;
+}
+
+.booking-tickets-entry form {
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    padding: 0px;
+    width: 105px;
+    height: 26px;
+    border: #000000 solid 1px;
+}
+
+.booking-tickets-entry form > *{
+    flex-grow: 1;
+}
+
+.booking-tickets-entry form .number{
+    width: 35px;
+    padding: 0px;
+    margin-left: -5px;
+}
+
+.booking-tickets-entry form button{
+    width: 35px;
+    color: #ffffff;
+    background-color: #000000;
+    border-style: none;
+    cursor: pointer;
+}
 
 .show-booking-tickets{
     animation: show-tickets 0.5s ease-in-out;
@@ -756,6 +892,10 @@ section#video.section h1{
     100%{
         left: 10%;
     }
+}
+
+.booking-logo{
+    background-image: url(/Project1-Museum/images/icons/luvr_triangle_gold.svg);
 }
 
 .dividing-line{

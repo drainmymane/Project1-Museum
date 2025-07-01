@@ -220,17 +220,17 @@
                         <div class="basic-amount">
                             <p>Basic 18+</p>
                             <form>
-                                <button type="button" onclick="this.nextElementSibling.stepDown()">–</button>
-                                <input type="number" min="0" max="20" value="1" readonly class="number">
-                                <button type="button" onclick="this.previousElementSibling.stepUp()">+</button> 
+                                <button type="button" onclick="this.nextElementSibling.firstChild.stepDown()">–</button>
+                                <div class="number"><input type="number" min="0" max="20" value="1" readonly></div>
+                                <button type="button" onclick="this.previousElementSibling.firstChild.stepUp()">+</button>
                             </form>
                         </div>
                         <div class="senior-amount">
                             <p>Senior 65+</p>
                             <form>
-                                <button type="button" onclick="this.nextElementSibling.stepDown()">–</button>
-                                <input type="number" min="0" max="20" value="1" readonly class="number">
-                                <button type="button" onclick="this.previousElementSibling.stepUp()">+</button> 
+                                <button type="button" onclick="this.nextElementSibling.firstChild.stepDown()">–</button>
+                                <div class="number"><input type="number" min="0" max="20" value="1" readonly></div>
+                                <button type="button" onclick="this.previousElementSibling.firstChild.stepUp()">+</button>
                             </form>
                         </div>
                         <div id="total-euro">
@@ -263,16 +263,55 @@
         <article id="booking-tickets" class="booking-tickets hidden">
             <div class="booking-tickets-wrapper">
                 <header>
-                    Booking tickets
+                    <div class="header-logo">
+                        <div class="louvre-logo booking-logo"></div>
+                    </div>
+                    <h1>BOOKING TICKETS</h1>
+                    <h4>Tour to Louvre</h4>
                 </header>
                 <div class="booking-tickets-total">
 
                 </div>
                 <div class="booking-tickets-info">
-                    Name
+                    <div class="date-time">
+                        <input type="date" id="date" class="date"></input>
+                        <input type="time" id="time" class="time"></input>
+                    </div>
+                    <div class="name">
+                        <input type="text" id="name" placeholder="Name">
+                    </div>
+                    <div class="mail">
+                        <input type="email" id="e-mail" placeholder="E-mail">
+                    </div>
+                    <div class="phone">
+                        <input type="tel" id="phone" placeholder="Phone">
+                    </div>
+                    <div>
+                        <select class="tickets-type">
+                            <option>Permanent exhibition</option>
+                            <option>Temporary exhibition</option>
+                            <option>Combined Admission</option>
+                        </select>
+                    </div>
                 </div>
                 <div class="booking-tickets-entry">
-                    Entry tickets
+                    <h4>Entry Ticket</h4>
+                    <div class="basic-amount">
+                        <p>Basic 18+(<span></span>)</p>
+                        <form>
+                            <button type="button" onclick="this.nextElementSibling.firstChild.stepDown()">–</button>
+                            <div class="number"><input type="number" min="0" max="20" value="1" readonly></div>
+                            <button type="button" onclick="this.previousElementSibling.firstChild.stepUp()">+</button> 
+                        </form>
+                    </div>
+                    <div class="senior-amount">
+                        <p>Senior 65+(<span></span>)</p>
+                        <form>
+                            <button type="button" onclick="this.nextElementSibling.firstChild.stepDown()">–</button>
+                            <div class="number"><input type="number" min="0" max="20" value="1" readonly></div>
+                            <button type="button" onclick="this.previousElementSibling.firstChild.stepUp()">+</button> 
+                        </form>
+                    </div>
                 </div>
             </div>
         </article>

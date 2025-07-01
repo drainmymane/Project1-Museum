@@ -1,5 +1,5 @@
-let basic_amount = document.querySelector('.basic-amount .number');
-let senior_amount = document.querySelector('.senior-amount .number');
+let basic_amount = document.querySelector('.basic-amount .number input');
+let senior_amount = document.querySelector('.senior-amount .number input');
 const container = document.querySelector('.booking-tickets');
 const pop_up = document.querySelector('.booking-tickets-wrapper');
 let fullPrice = 30;
