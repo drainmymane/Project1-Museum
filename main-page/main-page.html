@@ -202,15 +202,15 @@
                         <h2>Ticket Type</h2>
                         <form>
                             <label class="tickets-radio">Permanent exhibition
-                                <input type="radio" name="radio" value="1">
+                                <input type="radio" name="radio" value="20">
                                 <span class="checkmark"></span>
                             </label>
                             <label class="tickets-radio">Temporary exhibition
-                                <input type="radio" name="radio" value="2">
+                                <input type="radio" name="radio" value="25">
                                 <span class="checkmark"></span>
                             </label>
                             <label class="tickets-radio">Combined Admission
-                                <input type="radio" name="radio" value="3">
+                                <input type="radio" name="radio" value="40">
                                 <span class="checkmark"></span>
                             </label>
                         </form>
@@ -261,56 +261,69 @@
             </section>
         </main>
         <article id="booking-tickets" class="booking-tickets hidden">
-            <div class="booking-tickets-wrapper">
-                <header>
-                    <div class="header-logo">
-                        <div class="louvre-logo booking-logo"></div>
-                    </div>
-                    <h1>BOOKING TICKETS</h1>
-                    <h4>Tour to Louvre</h4>
-                </header>
-                <div class="booking-tickets-total">
+            <div class="booking-tickets-container">
+                <div class="crest"></div>
+                <div class="booking-tickets-wrapper">
+                    <header>
+                        <div class="header-logo">
+                            <div class="louvre-logo booking-logo"></div>
+                        </div>
+                        <h1>BOOKING TICKETS</h1>
+                        <h4>Tour to Louvre</h4>
+                    </header>
+                    <div class="booking-tickets-total">
 
-                </div>
-                <div class="booking-tickets-info">
-                    <div class="date-time">
-                        <input type="date" id="date" class="date"></input>
-                        <input type="time" id="time" class="time"></input>
                     </div>
-                    <div class="name">
-                        <input type="text" id="name" placeholder="Name">
+                    <div class="booking-tickets-info">
+                        <div class="date-time">
+                            <div class="input-container">
+                                <input type="text" id="date" onfocus="(this.type='date')" placeholder="Date"></input>
+                                <i></i>
+                            </div>
+                            <div class="input-container">
+                                <input type="text" id="time" onfocus="(this.type='time')" placeholder="Time"></input>
+                                <i></i>
+                            </div>
+                        </div>
+                        <div class="input-container">
+                            <input type="text" id="name" placeholder="Name">
+                            <i></i>
+                        </div>
+                        <div class="input-container">
+                            <input type="email" id="email" placeholder="E-mail">
+                            <i></i>
+                        </div>
+                        <div class="input-container">
+                            <input type="tel" id="tel" placeholder="Phone">
+                            <i></i>
+                        </div>
+                        <div class="input-container">
+                            <select class="tickets-type-select">
+                                <option value="20">Permanent exhibition</option>
+                                <option value="25">Temporary exhibition</option>
+                                <option value="40">Combined Admission</option>
+                            </select>
+                            <i></i>
+                        </div>
                     </div>
-                    <div class="mail">
-                        <input type="email" id="e-mail" placeholder="E-mail">
-                    </div>
-                    <div class="phone">
-                        <input type="tel" id="phone" placeholder="Phone">
-                    </div>
-                    <div>
-                        <select class="tickets-type">
-                            <option>Permanent exhibition</option>
-                            <option>Temporary exhibition</option>
-                            <option>Combined Admission</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="booking-tickets-entry">
-                    <h4>Entry Ticket</h4>
-                    <div class="basic-amount">
-                        <p>Basic 18+(<span></span>)</p>
-                        <form>
-                            <button type="button" onclick="this.nextElementSibling.firstChild.stepDown()">–</button>
-                            <div class="number"><input type="number" min="0" max="20" value="1" readonly></div>
-                            <button type="button" onclick="this.previousElementSibling.firstChild.stepUp()">+</button> 
-                        </form>
-                    </div>
-                    <div class="senior-amount">
-                        <p>Senior 65+(<span></span>)</p>
-                        <form>
-                            <button type="button" onclick="this.nextElementSibling.firstChild.stepDown()">–</button>
-                            <div class="number"><input type="number" min="0" max="20" value="1" readonly></div>
-                            <button type="button" onclick="this.previousElementSibling.firstChild.stepUp()">+</button> 
-                        </form>
+                    <div class="booking-tickets-entry">
+                        <h4>Entry Ticket</h4>
+                        <div class="basic-amount">
+                            <p>Basic 18+ (<span></span> &euro;)</p>
+                            <form>
+                                <button type="button" onclick="this.nextElementSibling.firstChild.stepDown()">–</button>
+                                <div class="number"><input type="number" min="0" max="20" value="1" readonly></div>
+                                <button type="button" onclick="this.previousElementSibling.firstChild.stepUp()">+</button> 
+                            </form>
+                        </div>
+                        <div class="senior-amount">
+                            <p>Senior 65+ (<span></span> &euro;)</p>
+                            <form>
+                                <button type="button" onclick="this.nextElementSibling.firstChild.stepDown()">–</button>
+                                <div class="number"><input type="number" min="0" max="20" value="1" readonly></div>
+                                <button type="button" onclick="this.previousElementSibling.firstChild.stepUp()">+</button> 
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>

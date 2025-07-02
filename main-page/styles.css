@@ -713,59 +713,124 @@ section#video.section h1{
     top: 0px;
 }
 
-.booking-tickets-wrapper{
-    position: absolute;
-    display: grid;
-    
-    grid-template-columns: 1fr 1fr;
-    column-gap: 40px;
-    grid-template-areas: "head total"
-                        "info total"
-                        "tickets total";
-    width: 60%;
-    height: 70%;
-    padding: 5% 10%;
-    margin: auto;
+.booking-tickets-container{
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1440px;
+    height: 835px;
+    padding: 91px 235px;
     background-color: white;
     box-shadow: 0px 5px 5px black;
     z-index: 10001;
 }
 
-.booking-tickets-info select{
-    height: 45px;
-    width: 100%;
-    border: #000000 solid 1px;
-    cursor: pointer;
-}
-
-.booking-tickets-info input{
-    box-sizing: border-box;
-    height: 45px;
-    width: 100%;
-    padding: 15px;
-    border: #000000 solid 1px;
-    color: #000000;
-    cursor: pointer;
-}
-
-/* .booking-tickets-info input::after{
+.booking-tickets-wrapper{
     position: absolute;
+    display: grid;
+    grid-template-columns: 400px 540px;
+    column-gap: 40px;
+    grid-template-areas: "head total"
+                        "info total"
+                        "tickets total";
+    margin: auto;
+
+}
+
+.crest{
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    width: 25px;
+    height: 25px;
+    background-image: url(/Project1-Museum/images/icons/crest.svg);
+    cursor: pointer;
+}
+
+.booking-tickets-info input,.booking-tickets-info select{
     width: 100%;
     height: 100%;
-    z-index: 10000000;
-    background-color: #ffffff;
-} */
+    border: none;
+    cursor: pointer;
+}
 
-.booking-tickets-info div{
+.input-container{
+    position: relative;
+    height: 45px;
+    width: 100%;
+    padding: 0px;
+    border: #000000 solid 1px;
+    color: #000000;
+}
+
+.input-container input,.input-container select {
+    box-sizing: border-box;
+    color: #000000;
+    width: 100%;
+    padding-left: 40px;
+    padding-right: 15px;
+}
+
+.input-container input::placeholder{
+    color: #000000;
+}
+
+.input-container select {
+    padding-left: 35px;
+}
+
+.input-container i {
+    position: absolute;
+    align-self: center;
+    left: 15px;
+    height: 15px;
+    width: 15px;
+    background-repeat: no-repeat;
+}
+
+.input-container input#date::after,.input-container input#time::after{
+
+}
+
+input#date+i{
+    background-image: url(/Project1-Museum/images/icons/date-icon.svg);
+}
+
+input#time+i{
+    background-image: url(/Project1-Museum/images/icons/time-icon.svg);
+}
+
+input#name+i{
+    background-image: url(/Project1-Museum/images/icons/name-icon.svg);
+}
+
+input#email+i{
+    height: 11px;
+    background-image: url(/Project1-Museum/images/icons/email-icon.svg);
+}
+
+input#tel+i{
+    height: 23px;
+    background-image: url(/Project1-Museum/images/icons/tel-icon.svg);
+}
+
+select.tickets-type-select+i{
+    background-image: url(/Project1-Museum/images/icons/Vector-icon.svg);
+}
+
+.booking-tickets-info div.input-container{
     margin-bottom: 20px;
 }
 
 .date-time{
     display: flex;
+    justify-content: space-between;
 }
 
-.date{
-    margin-right: 20px;
+div.date-time div.input-container{
+    width: 190px;
 }
 
 .booking-tickets-wrapper *{
@@ -818,7 +883,6 @@ section#video.section h1{
 
 .booking-tickets-wrapper > .booking-tickets-total{
     grid-area: total;
-    height: 100%;
     border: #000000 solid 1px;
 }
 
@@ -890,7 +954,7 @@ section#video.section h1{
         left: -100%;
     }
     100%{
-        left: 10%;
+        left: 0%;
     }
 }
 
@@ -1137,7 +1201,7 @@ section#video.section h1{
 
 .in-view{
     opacity: 1;
-    animation: in-view 1s ease-in-out;
+    animation: in-view 0.5s ease-in-out;
 }
 
 @keyframes to-right{

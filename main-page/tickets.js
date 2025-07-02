@@ -1,7 +1,9 @@
 let basic_amount = document.querySelector('.basic-amount .number input');
 let senior_amount = document.querySelector('.senior-amount .number input');
+let booking_basic_amount = document.querySelector('.booking-tickets-entry .basic-amount .number input');
+let booking_senior_amount = document.querySelector('.booking-tickets-entry .senior-amount .number input');
 const container = document.querySelector('.booking-tickets');
-const pop_up = document.querySelector('.booking-tickets-wrapper');
+const pop_up = document.querySelector('.booking-tickets-container');
 let fullPrice = 30;
 const permanentTicket = 20;
 const temporaryTicket = 25;
@@ -37,17 +39,40 @@ window.addEventListener("load", (event) => {
 });
 
 function handleClick(){
+    booking_basic_amount.value = +basic_amount.value;
+    booking_senior_amount.value = +senior_amount.value;
     container.classList.toggle('hidden');
     pop_up.classList.toggle('show-booking-tickets');
+    handleTypeChange();
+}
+
+function handleTypeChange(){
+    document.querySelector('.tickets-type-select').value=arrMode[radioMode];
+}
+
+function HandleSelectOnChange(){
+    radioMode = document.querySelector('.tickets-type-select').selectedIndex;
+    document.querySelector('.booking-tickets-entry .basic-amount p span').innerHTML = arrMode[radioMode];
+    document.querySelector('.booking-tickets-entry .senior-amount p span').innerHTML = arrMode[radioMode]/2;
+}
+
+function HandlePopUpOnChange(){
+    basic_amount.value = booking_basic_amount.value;
+    senior_amount.value = booking_senior_amount.value;
+    arrType[radioMode].checked=true;
+    handlePriceChange();
 }
 
 document.querySelector('.buy-now').addEventListener('click', handleClick);
 container.addEventListener('click', (event)=>{
-    if(event.target.classList.contains('booking-tickets')){
+    if(event.target.classList.contains('booking-tickets') || event.target.classList.contains('crest')){
         container.classList.toggle('hidden');
         pop_up.classList.toggle('show-booking-tickets');
+        HandlePopUpOnChange();
     }
 });
+
+document.querySelector('.tickets-type-select').addEventListener('change', HandleSelectOnChange);
 document.querySelector('.tickets-type').addEventListener('change', getSelectedValue);
 document.querySelector('.basic-amount').addEventListener('click', handlePriceChange);
 document.querySelector('.senior-amount').addEventListener('click', handlePriceChange);
