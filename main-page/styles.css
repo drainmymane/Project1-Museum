@@ -61,6 +61,7 @@ h3{
 
 .container{
     width: 100%;
+    background-color: #030303;
 }
 
 p{
@@ -74,7 +75,7 @@ p{
     justify-content: space-between;
     align-items: center;
     margin: 0px auto;
-    width: 1440px;
+    max-width: 1440px;
     height: 150px;
     font-weight: 100;
     background-color: #030303;
@@ -251,18 +252,13 @@ a.socials-link:nth-child(5){
 .section{
     position: relative;
     margin: 0px auto;
-    width: 1440px;
-}
-
-#welcome,#explore,#gallery,.dividing-line{
-    min-width: 1440px;
+    max-width: 1440px;
 }
 
 #welcome{
     position: relative;
     padding-bottom: 50px;
     color: #ffffff;
-    background-color: #030303;
     box-shadow: 0px 5px 5px grey;
 }
 
@@ -1251,17 +1247,9 @@ div.date-time div.input-container{
 
     }
 
-    #welcome,#explore,#gallery,.dividing-line{
-        min-width: auto;
-    }
-
     .section{
         width: 1024px;
         margin-left: 20px;
-    }
-
-    #welcome,#explore,#gallery,.dividing-line{
-        max-width: 1024px;
     }
 
     #welcome{
@@ -1273,7 +1261,7 @@ div.date-time div.input-container{
     }
     
     .header-container{
-        width: 1024px;
+        max-width: 1024px;
     }
 
     .welcome-section{
@@ -1411,7 +1399,7 @@ div.date-time div.input-container{
     }
 
     #gallery{
-        width: 1024px;
+        max-width: 1024px;
         height: 1460px;
     }
 
@@ -1486,17 +1474,16 @@ div.date-time div.input-container{
     }
 
     .footer-container::after{
-        width: 1024px;
+        max-width: 1024px;
     }
 }
 
 @media (max-width: 768px) {
-    #welcome,#explore,#gallery,.dividing-line{
+    .header-container{
         max-width: 768px;
-        min-width: auto;
     }
 
-    .header-container,.section{
+    .section{
         width: 768px;
     }
 
@@ -1693,8 +1680,12 @@ div.date-time div.input-container{
         min-width: auto;
     }
 
-    .header-container,.section{
-        width: 420px;
+    .header-container{
+        max-width: 420px;
+    }
+
+    .section{
+        max-width: 420px;
     }
 
     .section{
