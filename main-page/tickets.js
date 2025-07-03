@@ -23,7 +23,9 @@ function getSelectedValue() {
 
 function handlePriceChange(){
     fullPrice = arrMode[radioMode] * (+basic_amount.value + (+senior_amount.value/2.0));
-    document.querySelector('#total-euro .full-price').innerHTML = fullPrice;
+    document.querySelectorAll('.full-price').forEach( item => {
+        item.innerHTML = fullPrice;
+    })
     localStorage.setItem('basic_amount', +basic_amount.value);
     localStorage.setItem('senior_amount', +senior_amount.value);
     localStorage.setItem('radio_mode', radioMode);
@@ -35,7 +37,7 @@ window.addEventListener("load", (event) => {
     if (localStorage.senior_amount) radioMode = localStorage.getItem('radio_mode');
     getSelectedValue();
     arrType[radioMode].checked=true;
-    document.querySelector('#total-euro .full-price').innerHTML = fullPrice;
+    document.querySelector('.full-price').innerHTML = fullPrice;
 });
 
 function handleClick(){
@@ -46,14 +48,19 @@ function handleClick(){
     handleTypeChange();
 }
 
-function handleTypeChange(){
-    document.querySelector('.tickets-type-select').value=arrMode[radioMode];
-}
-
 function HandleSelectOnChange(){
     radioMode = document.querySelector('.tickets-type-select').selectedIndex;
-    document.querySelector('.booking-tickets-entry .basic-amount p span').innerHTML = arrMode[radioMode];
-    document.querySelector('.booking-tickets-entry .senior-amount p span').innerHTML = arrMode[radioMode]/2;
+    document.querySelectorAll('.booking-tickets-wrapper .basic-amount p span').forEach(item => {
+                                                                                item.innerHTML = arrMode[radioMode];
+                                                                            });
+    document.querySelectorAll('.booking-tickets-wrapper .senior-amount p span').forEach(item => {
+                                                                                item.innerHTML = (arrMode[radioMode]/2);
+                                                                            });
+}
+
+function handleTypeChange(){
+    document.querySelector('.tickets-type-select').value=arrMode[radioMode];
+    HandleSelectOnChange();
 }
 
 function HandlePopUpOnChange(){
@@ -68,11 +75,11 @@ container.addEventListener('click', (event)=>{
     if(event.target.classList.contains('booking-tickets') || event.target.classList.contains('crest')){
         container.classList.toggle('hidden');
         pop_up.classList.toggle('show-booking-tickets');
-        HandlePopUpOnChange();
     }
 });
 
+container.addEventListener('click', HandlePopUpOnChange);
+
 document.querySelector('.tickets-type-select').addEventListener('change', HandleSelectOnChange);
 document.querySelector('.tickets-type').addEventListener('change', getSelectedValue);
-document.querySelector('.basic-amount').addEventListener('click', handlePriceChange);
-document.querySelector('.senior-amount').addEventListener('click', handlePriceChange);
+document.querySelectorAll('.basic-amount,.senior-amount').forEach(item => {item.addEventListener('click', handlePriceChange)});

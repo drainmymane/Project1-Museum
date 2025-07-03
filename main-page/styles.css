@@ -786,10 +786,6 @@ section#video.section h1{
     background-repeat: no-repeat;
 }
 
-.input-container input#date::after,.input-container input#time::after{
-
-}
-
 input#date+i{
     background-image: url(/Project1-Museum/images/icons/date-icon.svg);
 }
@@ -877,16 +873,110 @@ div.date-time div.input-container{
     border-bottom: #710707 solid 2px;
 }
 
-.booking-tickets-wrapper > .booking-tickets-total{
+.booking-tickets-total{
     grid-area: total;
+    display: grid;
+    grid-template-areas:"overview pic"
+                        "summary summary"
+                        "credentials credentials"
+                        ". book";
+    padding: 25px 30px;
     border: #000000 solid 1px;
 }
 
-.booking-tickets-wrapper > .booking-tickets-info{
+.booking-tickets-total *{
+    text-transform: none;
+    letter-spacing: 0px;
+    font-family: Roboto;
+}
+
+.booking-tickets-total h1{
+    font-weight: 500;
+}
+
+.booking-tickets-total h3{
+    margin-top: -13px;
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: #710707;
+}
+
+.booking-tickets-total ul >li{
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.booking-tickets-total .overview{
+    grid-area: overview;
+    display: flex;
+    flex-direction: column;
+}
+
+.booking-tickets-total img{
+    grid-area: pic;
+    justify-self: flex-end;
+    top: 0px;
+}
+
+.booking-tickets-total .summary{
+    grid-area: summary;
+}
+
+#total{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: #710707 solid 2px;
+}
+
+#total *{
+    font-size: 32px;
+}
+
+#total span{
+    font-weight: 500;
+}
+
+.booking-tickets-total .credentials{
+    grid-area: credentials;
+    position: relative;
+}
+
+.credentials > div{
+    width: 360px;
+    height: 211px;
+}
+
+.front-card{
+    background-color: #BCBCBC;
+}
+
+.back-card{
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    background-color: #A4A4A3;
+    z-index: -1;
+}
+
+.book-button{
+    grid-area: book;
+    justify-self: flex-end;
+    align-self: flex-end;
+    margin-top: 26px;
+    width: 220px;
+    height: 45px;
+    border-style: none;
+    color: #ffffff;
+    background-color: #710707;
+    cursor: pointer;
+}
+
+.booking-tickets-info{
     grid-area: info;
 }
 
-.booking-tickets-wrapper > .booking-tickets-entry{
+.booking-tickets-entry{
     grid-area: tickets;
     padding: 10px 15px 15px;
     border: #000000 solid 1px;
