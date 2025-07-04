@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -287,11 +288,14 @@
                     <img src="/Project1-Museum/images/icons/luvr-tickets-icon.svg" alt="luvr-tickets">
                     <div class="summary">
                         <div class="basic-amount">
+                            <div id="myBasicSumm"></div>
                             <p>Basic 18+ (<span></span> &euro;)</p>
+                            <span><span class="basic-amount-summ"></span> &euro;</span>
                         </div>
                         <div class="senior-amount">
+                            <div id="mySeniorSumm"></div>
                             <p>Senior 65+ (<span></span> &euro;)</p>
-                            <div></div>
+                            <span><span class="senior-amount-summ"></span> &euro;</span>
                         </div>
                         <div id="total">
                             <p>Total: </p><span><span class="full-price"></span> &euro;</span>
@@ -299,38 +303,89 @@
                     </div>
                     <div class="credentials">
                         <div class="front-card">
-
+                            <div class="input-container">
+                                <div class="input-group">
+                                    <label>Card number</label>
+                                    <input type="text" id="account-holder-number" maxlength="20">
+                                </div>
+                                <div class="input-group">
+                                    <label>Expiration date</label>
+                                    <div>
+                                        <select id="expiration-month">
+                                            <option value="01">01</option>
+                                            <option value="02">02</option>
+                                            <option value="03">03</option>
+                                            <option value="04">04</option>
+                                            <option value="05">05</option>
+                                            <option value="06">06</option>
+                                            <option value="07">07</option>
+                                            <option value="08">08</option>
+                                            <option value="09">09</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                        </select>
+                                        <select id="expiration-year">
+                                            <option value="25">2025</option>
+                                            <option value="26">2026</option>
+                                            <option value="27">2027</option>
+                                            <option value="28">2028</option>
+                                            <option value="29">2029</option>
+                                            <option value="30">2030</option>
+                                            <option value="31">2031</option>
+                                            <option value="32">2032</option>
+                                            <option value="33">2033</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="input-group">
+                                    <label>Cardholder name</label>
+                                    <input type="text" id="account-holder-name" maxlength="20">
+                                </div>
+                                <div id="available-payments" class="input-group">
+                                    <img src="/Project1-Museum/images/icons/Visa.svg" alt="visa">
+                                    <img src="/Project1-Museum/images/icons/Mastercard.svg" alt="master">
+                                </div>
+                            </div>
                         </div>
                         <div class="back-card">
-
+                            <div id="cvv" class="input-group">
+                                <label>CVC/CVV</label>
+                                <input type="text" id="account-holder-cvv" maxlength="4">
+                                <label style="font-size: 10px;margin-top: 5px;">The last
+                                        3 or 4 digits
+                                        on back
+                                        of the card
+                                </label>
+                            </div>
                         </div>
                     </div>
                     <button class="book-button">Book</button>
                 </div>
                 <div class="booking-tickets-info">
                     <div class="date-time">
-                        <div class="input-container">
-                            <input type="text" id="date" onfocus="(this.type='date')" placeholder="Date"></input>
+                        <div class="input-group arrow">
+                            <input type="text" value="Date" id="date" name="date" onfocus="(this.type='date')"></input>
                             <i></i>
                         </div>
-                        <div class="input-container">
-                            <input type="text" id="time" onfocus="(this.type='time')" placeholder="Time"></input>
+                        <div class="input-group arrow">
+                            <input type="text" step="1800" value="Time" id="time" onfocus="(this.type='time')"></input>
                             <i></i>
                         </div>
                     </div>
-                    <div class="input-container">
+                    <div class="input-group">
                         <input type="text" id="name" placeholder="Name">
                         <i></i>
                     </div>
-                    <div class="input-container">
-                        <input type="email" id="email" placeholder="E-mail">
+                    <div class="input-group">
+                        <input type="email" id="email" required  placeholder="E-mail">
                         <i></i>
                     </div>
-                    <div class="input-container">
-                        <input type="tel" id="tel" placeholder="Phone">
+                    <div class="input-group">
+                        <input type="tel" id="tel" required  placeholder="Phone">
                         <i></i>
                     </div>
-                    <div class="input-container">
+                    <div class="input-group arrow">
                         <select class="tickets-type-select">
                             <option value="20">Permanent exhibition</option>
                             <option value="25">Temporary exhibition</option>
@@ -389,7 +444,7 @@
                 <a href="https://pinterest.com/" class="socials-link"></a>
             </div>
             <div class="flex-footer">
-                <div>@ 2025</div><div>Alright-alright-alright...</div><div>drainmymane</div>
+                <div>@ 2025</div><a href="https://www.figma.com/design/ixW6xqvYFWvEV7qlp5pM7L/Museum-04.09--Copy-?node-id=0-1&p=f&t=B85F7cVzXFwp4hA4-0">Alright-alright-alright...</a><div>drainmymane</div>
             </div>
         </div>
     </footer>
@@ -398,5 +453,6 @@
     <script src="/Project1-Museum/main-page/explore-slider-script.js"></script>
     <script src="/Project1-Museum/main-page/gallery.js"></script>
     <script src="/Project1-Museum/main-page/tickets.js"></script>
+    <script src="/Project1-Museum/main-page/data-past-disabler.js"></script>
 </body>
 </html>

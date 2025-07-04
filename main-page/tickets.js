@@ -1,3 +1,5 @@
+let my_basic_summ = document.getElementById('myBasicSumm');
+let my_senior_summ = document.getElementById('mySeniorSumm');
 let basic_amount = document.querySelector('.basic-amount .number input');
 let senior_amount = document.querySelector('.senior-amount .number input');
 let booking_basic_amount = document.querySelector('.booking-tickets-entry .basic-amount .number input');
@@ -25,7 +27,11 @@ function handlePriceChange(){
     fullPrice = arrMode[radioMode] * (+basic_amount.value + (+senior_amount.value/2.0));
     document.querySelectorAll('.full-price').forEach( item => {
         item.innerHTML = fullPrice;
-    })
+    });
+    document.querySelector('.basic-amount-summ').innerHTML = +basic_amount.value * arrMode[radioMode];
+    document.querySelector('.senior-amount-summ').innerHTML = (+senior_amount.value/2.0) * arrMode[radioMode];
+    my_basic_summ.innerHTML = basic_amount.value;
+    my_senior_summ.innerHTML = senior_amount.value;
     localStorage.setItem('basic_amount', +basic_amount.value);
     localStorage.setItem('senior_amount', +senior_amount.value);
     localStorage.setItem('radio_mode', radioMode);
