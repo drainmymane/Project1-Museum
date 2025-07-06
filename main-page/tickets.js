@@ -13,6 +13,8 @@ const combinedTicket = 40;
 const arrMode = [permanentTicket, temporaryTicket, combinedTicket];
 let radioMode = 0;
 const arrType = document.querySelectorAll('.tickets-radio input');
+const dayOfWeek = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+const month = ["January", "February", "March", "April", "May", "June","July", "August", "September", "October", "November", "December"];
 
 function getSelectedValue() {
     for (let i=0; i<arrType.length; i++){   
@@ -54,6 +56,11 @@ function handleClick(){
     handleTypeChange();
 }
 
+function handleTypeChange(){
+    document.querySelector('.tickets-type-select').value=arrMode[radioMode];
+    HandleSelectOnChange();
+}
+
 function HandleSelectOnChange(){
     radioMode = document.querySelector('.tickets-type-select').selectedIndex;
     document.querySelectorAll('.booking-tickets-wrapper .basic-amount p span').forEach(item => {
@@ -62,11 +69,16 @@ function HandleSelectOnChange(){
     document.querySelectorAll('.booking-tickets-wrapper .senior-amount p span').forEach(item => {
                                                                                 item.innerHTML = (arrMode[radioMode]/2);
                                                                             });
+    document.querySelector(".overview ul :nth-child(3)").innerText = document.querySelector(`.tickets-type-select :nth-child(${radioMode+1})`).innerHTML;
 }
 
-function handleTypeChange(){
-    document.querySelector('.tickets-type-select').value=arrMode[radioMode];
-    HandleSelectOnChange();
+function HandleDateOnChange(){
+    const date = new Date(`${this.value}`);
+    document.querySelector(".overview ul :nth-child(1)").innerText = dayOfWeek[date.getDay()] + ", " + month[date.getMonth()-1] + " " + date.getDate();
+}
+
+function HandleTimeOnChange(){
+    document.querySelector(".overview ul :nth-child(2)").innerText = this.value;
 }
 
 function HandlePopUpOnChange(){
@@ -87,5 +99,7 @@ container.addEventListener('click', (event)=>{
 container.addEventListener('click', HandlePopUpOnChange);
 
 document.querySelector('.tickets-type-select').addEventListener('change', HandleSelectOnChange);
+document.getElementById('date').addEventListener('change', HandleDateOnChange);
+document.getElementById('time').addEventListener('change', HandleTimeOnChange);
 document.querySelector('.tickets-type').addEventListener('change', getSelectedValue);
 document.querySelectorAll('.basic-amount,.senior-amount').forEach(item => {item.addEventListener('click', handlePriceChange)});

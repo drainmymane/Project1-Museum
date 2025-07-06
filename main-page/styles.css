@@ -324,11 +324,6 @@ a.socials-link:nth-child(5){
     z-index: 10;
 }
 
-#visiting{
-    height: 1116px;
-    margin-bottom: 75px;
-}
-
 .visiting-container{
     display: grid;
     grid-template-rows: auto auto;
@@ -417,10 +412,6 @@ a.socials-link:nth-child(5){
     color: #CAAA7D;
 }
 
-#video{
-    height: 1246px;
-}
-
 section#video.section h1{
     border: none;
 }
@@ -428,19 +419,19 @@ section#video.section h1{
 .video-grid-container {  
     display: grid;
     position: relative;
+    grid-template-columns: 1fr 1fr;
     gap: 40px;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 650px 254px 15px;
-    grid-template-areas:
-    "big-video big-video big-video"
-    "small-video small-video small-video"
-    ". video-slider .";
+    grid-template-rows: 135px 900px 254px 100px;
+    grid-template-areas:"video-head video-text"
+                        "big-video big-video"
+                        "video-slider video-slider"
+                        "control-bar control-bar";
+    user-select: none;
 }
 
 .video-head { 
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 50px;
+    grid-area: video-head;
+    align-self: center;
 }
 
 .video-text{
@@ -456,12 +447,93 @@ section#video.section h1{
     grid-area: big-video;
 }
 
-.small-video{ 
-    grid-area: 'small-video'; 
+.big-video > div *{
+    border: none;
+    height: 900px;
 }
 
-.video-slider { 
+.small-videos{
+    position: relative;
+    box-sizing: border-box;
     grid-area: video-slider;
+    max-width: 1440px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.video-slider > div *{
+    border-style: none;
+    width: 452px;
+    height: 254px;
+}
+
+.video-slider .slick-track {
+    column-gap: 42px;
+}
+
+.video-slider .slick-list {
+    margin: 0 -21px;
+}
+
+.slick-track{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.controls{
+    grid-area: control-bar;
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    margin: -80px 0 0 0;
+}
+
+button.slick-arrow{
+    position: relative;
+    margin: 10px 0 0 0;
+    font-weight: 700;
+    color: #999999;
+    background-color: #ffffff;
+    border: none;
+}
+
+button.slick-next,button.slick-prev{
+    background-color: #ffffff;
+    left: 0px;
+    top: 0px;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+.slick-dots{
+    display: flex;
+    justify-content: center;
+}
+
+.slick-dots li{
+    margin-top: 40px;
+    margin: 0px 10px;
+}
+
+.slick-dots button{
+    font-size: 0px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #999999;
+    border-style: none;
+    cursor: pointer;
+}
+
+.slick-dots button:hover, .slick-dots button:active,.slick-active button{
+    color: #333333;
+    background-color: #333333;
+}
+
+.slick-arrow:hover{
+    color: #333333;
 }
 
 
@@ -642,7 +714,6 @@ section#video.section h1{
 .tickets-amount form{
     display: flex;
     justify-content: space-between;
-    width: 150px;
     height: 50px;
     padding: 0px 14px;
     border: 3px solid #000000;
@@ -777,9 +848,8 @@ section#video.section h1{
     background-position: 50%;
     background-repeat: no-repeat;
     background-color: white;
-    cursor: pointer;
-    pointer-events: none;
-}
+    pointer-events:none;
+}   
 
 .booking-tickets-info .input-group input,.input-group select {
     box-sizing: border-box;
@@ -832,7 +902,7 @@ select.tickets-type-select+i{
     background-image: url(/Project1-Museum/images/icons/Vector-icon.svg);
 }
 
-.booking-tickets-info div.input-group{
+.booking-tickets-info .input-group{
     margin-bottom: 20px;
 }
 
@@ -841,7 +911,7 @@ select.tickets-type-select+i{
     justify-content: space-between;
 }
 
-div.date-time div.input-group{
+div.date-time .input-group{
     width: 190px;
 }
 
@@ -1154,7 +1224,7 @@ div.date-time div.input-group{
     margin-bottom: 18px;
 }
 
-.booking-tickets-entry form {
+.booking-tickets-entry .amount-buttons {
     display: flex;
     justify-content: space-between;
     align-self: center;
@@ -1164,17 +1234,17 @@ div.date-time div.input-group{
     border: #000000 solid 1px;
 }
 
-.booking-tickets-entry form > *{
+.booking-tickets-entry .amount-buttons > *{
     flex-grow: 1;
 }
 
-.booking-tickets-entry form .number{
+.booking-tickets-entry .amount-buttons .number{
     width: 35px;
     padding: 0px;
     margin-left: -5px;
 }
 
-.booking-tickets-entry form button{
+.booking-tickets-entry .amount-buttons button{
     width: 35px;
     color: #ffffff;
     background-color: #000000;
@@ -1244,6 +1314,7 @@ div.date-time div.input-group{
     background-image: url(/Project1-Museum/images/pictures/map.jpg);
     height: 620px;
     width: 960px;
+    margin-left: 10px;
 }
 
 .welcome-slider-container{
