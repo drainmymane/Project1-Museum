@@ -452,7 +452,7 @@ section#video.section h1{
     height: 900px;
 }
 
-.small-videos{
+.video-slider{
     position: relative;
     box-sizing: border-box;
     grid-area: video-slider;
