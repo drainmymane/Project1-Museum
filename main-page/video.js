@@ -18,8 +18,12 @@ $(document).ready(function(){
   // });
 
   $('.video-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
-    handleVideoSwitch(nextSlide);
-    $('.video-slider').slick('setPosition');
+    if(currentSlide !== nextSlide){
+      handleVideoSwitch(nextSlide);
+      toggle.textContent = '▶︎';
+      bigPlayButton.classList.remove('hidden');
+      progressFilled.style.flexBasis = `${0}%`;
+    }
   });
 });
 
@@ -41,11 +45,9 @@ function updateButton(e){
   const icon = this.paused ? '▶︎' : '||';
   this.paused ? bigPlayButton.classList.remove('hidden') : bigPlayButton.classList.add('hidden');
   toggle.textContent = icon;
-  console.log(video)
 }
 
 function handleRangeUpdate(){
-  console.log(this.value);
   video.volume = this.value;
 }
 
@@ -71,7 +73,6 @@ function openFullscreen() {
 
 function handleVideoSwitch(nextslide){
   video.src = `/Project1-Museum/videos/video${nextslide}.mp4`;
-  console.log("KAKASHKI")
 }
 
 video.addEventListener('click', togglePlay);
