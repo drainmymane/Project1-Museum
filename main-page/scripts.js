@@ -1,6 +1,9 @@
-let images = document.querySelectorAll('.slider-image-wrapper .item');
-let items = document.querySelectorAll('.page-list-item');
-let slider = document.querySelector('.slider-image-wrapper');
+const images = document.querySelectorAll('.slider-image-wrapper .item');
+const items = document.querySelectorAll('.page-list-item');
+const slider = document.querySelector('.slider-image-wrapper');
+const list = document.querySelector('.list-toggle');  //list-toggle
+const xmark = document.querySelector('.x-mark');  //x-mark
+
 let currentItem = 0;
 let isEnabled = true;
 
@@ -11,9 +14,9 @@ function refreshPageCount(){
 }
 
 function refreshItems(){
-    document.querySelector('.item.active').classList.remove('active');
-    document.querySelector('.item.next').classList.remove('next');
-    document.querySelector('.item.prev').classList.remove('prev');
+    document.querySelector('.slider-image-wrapper .item.active').classList.remove('active');
+    document.querySelector('.slider-image-wrapper .item.next').classList.remove('next');
+    document.querySelector('.slider-image-wrapper .item.prev').classList.remove('prev');
     images[currentItem].classList.add('active');
     images[(currentItem+1+images.length)%images.length].classList.add('next');
     images[(currentItem-1+images.length)%images.length].classList.add('prev');
@@ -87,9 +90,22 @@ const handleListClick = (event) => {
     }
 }
 
+function handleToggleList(){
+    list.classList.toggle('collapsed');
+    xmark.classList.toggle('collapsed');
+    document.getElementById('welcome-nav-list').classList.toggle('hidden');
+    document.querySelector('.welcome-title').classList.toggle('hidden');
+}
+
 document.querySelector('.page-list').addEventListener('click', handleListClick);
 document.querySelector('.right-arrow').addEventListener('click', handleFromRightToLeft);
 document.querySelector('.left-arrow').addEventListener('click', handleFromLeftToRight);
+document.querySelectorAll('.list-toggle,.x-mark').forEach(item => {item.addEventListener('click', handleToggleList)}); 
+window.addEventListener('resize', (e)=>{
+    if ((e.target.innerWidth>1024) && (list.classList.contains('collapsed'))){
+        handleToggleList();
+    }
+});
 
 function swipeDetect(el){
     let startX = 0;

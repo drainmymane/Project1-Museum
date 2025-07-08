@@ -1,11 +1,12 @@
-let my_basic_summ = document.getElementById('myBasicSumm');
-let my_senior_summ = document.getElementById('mySeniorSumm');
-let basic_amount = document.querySelector('.basic-amount .number input');
-let senior_amount = document.querySelector('.senior-amount .number input');
-let booking_basic_amount = document.querySelector('.booking-tickets-entry .basic-amount .number input');
-let booking_senior_amount = document.querySelector('.booking-tickets-entry .senior-amount .number input');
+const my_basic_summ = document.getElementById('myBasicSumm');
+const my_senior_summ = document.getElementById('mySeniorSumm');
+const basic_amount = document.querySelector('.basic-amount .number input');
+const senior_amount = document.querySelector('.senior-amount .number input');
+const booking_basic_amount = document.querySelector('.booking-tickets-entry .basic-amount .number input');
+const booking_senior_amount = document.querySelector('.booking-tickets-entry .senior-amount .number input');
 const container = document.querySelector('.booking-tickets');
 const pop_up = document.querySelector('.booking-tickets-container');
+
 let fullPrice = 30;
 const permanentTicket = 20;
 const temporaryTicket = 25;

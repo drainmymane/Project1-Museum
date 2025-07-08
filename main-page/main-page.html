@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
@@ -27,7 +28,7 @@
                     <li><a href="#contacts" class="nav-link">Contacts</a></li>
                 </ul>
                 </nav>
-                <div class="list-toggle collapsed">
+                <div class="list-toggle">
                     <div class="line1"></div>
                     <div class="line2"></div>
                     <div class="line3"></div>
@@ -41,6 +42,16 @@
     <main class="main-container">
         <div class="container">
             <section id="welcome">
+                <nav id="welcome-nav-list" class="hidden">
+                    <ul class="nav-list">
+                        <li><a href="#visiting" class="nav-link">Visiting</a></li>
+                        <li><a href="#explore" class="nav-link">Explore</a></li>
+                        <li><a href="#video" class="nav-link">Video</a></li>
+                        <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                        <li><a href="#tickets" class="nav-link">Tickets</a></li>
+                        <li><a href="#contacts" class="nav-link">Contacts</a></li>
+                    </ul>
+                </nav>
                 <!--welcome-->
                 <div class="welcome-section section">
                     <div class="welcome-title">
@@ -156,19 +167,25 @@
             <div class="video-grid-container">
                 <h1 class="video-head">Video journey</h1>
                 <p class="video-text">Enter and visit one of the most famous museums in the world and enjoy<br>masterpieces such as Mona Lisa or Hammurabi's Code</p>
-                <div class="big-video">
-                    <div><iframe src="https://www.youtube.com/embed/zp1BXPX8jcU?si=3X1dBSUM1t_n8oGG"></iframe></div>
-                    <div><iframe src="https://www.youtube.com/embed/NOhDysLnTvY?si=laZSJkpxp00Qxq51"></iframe></div>
-                    <div><iframe src="https://www.youtube.com/embed/aWmJ5DgyWPI?si=Mi_TSYyebfgiZ_p4"></iframe></div>
-                    <div><iframe src="https://www.youtube.com/embed/2OR0OCr6uRE?si=7tkoePAkh7odKLmT"></iframe></div>
-                    <div><iframe src="https://www.youtube.com/embed/VNSq1qf5ZFk?si=Q9VRX7H3V4o58ryF"></iframe></div>
+                <div class="big-video player">
+                    <video  class="viewer" src="/Project1-Museum/videos/video0.mp4" style="max-width: 1440px;width: 100%;"></video>
+                    <div class="big-play-button">▶︎</div>
+                    <div class="player-controls">
+                        <button class="toggle">▶︎</button>
+                        <div class="progress">
+                            <div class="progress-filled"></div>
+                        </div>
+                        <i class="fa fa-volume-up"></i>
+                        <input type="range" name="volume" min="0" max="1" step="0.05" value="1" class="volume">
+                        <button class="fullscreen"></button>
+                    </div>
                 </div>
                 <div class="video-slider">
-                    <div><iframe src="https://www.youtube.com/embed/zp1BXPX8jcU?si=3X1dBSUM1t_n8oGG"></iframe></div>
-                    <div><iframe src="https://www.youtube.com/embed/NOhDysLnTvY?si=laZSJkpxp00Qxq51"></iframe></div>
-                    <div><iframe src="https://www.youtube.com/embed/aWmJ5DgyWPI?si=Mi_TSYyebfgiZ_p4"></iframe></div>
-                    <div><iframe src="https://www.youtube.com/embed/2OR0OCr6uRE?si=7tkoePAkh7odKLmT"></iframe></div>
-                    <div><iframe src="https://www.youtube.com/embed/VNSq1qf5ZFk?si=Q9VRX7H3V4o58ryF"></iframe></div>
+                    <div class="video-slider-item"><iframe loading="lazy" src="https://www.youtube.com/embed/zp1BXPX8jcU?si=3X1dBSUM1t_n8oGG"></iframe></div>
+                    <div class="video-slider-item"><iframe loading="lazy" src="https://www.youtube.com/embed/NOhDysLnTvY?si=laZSJkpxp00Qxq51"></iframe></div>
+                    <div class="video-slider-item"><iframe loading="lazy" src="https://www.youtube.com/embed/aWmJ5DgyWPI?si=Mi_TSYyebfgiZ_p4"></iframe></div>
+                    <div class="video-slider-item"><iframe loading="lazy" src="https://www.youtube.com/embed/2OR0OCr6uRE?si=7tkoePAkh7odKLmT"></iframe></div>
+                    <div class="video-slider-item"><iframe loading="lazy" src="https://www.youtube.com/embed/Vi5D6FKhRmo?si=AcKH9-kRxO91iO1I"></iframe></div>
                 </div>
                 <div class="controls">
                     
